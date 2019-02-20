@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>后台管理</title>
+  <%= stylesheet_link_tag 'admin', media: 'all'%>
+  <%= javascript_include_tag 'admin'%>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<main>
+  <header>
+    <a class="logo"><i class="fa fa-leaf pr10 f18"></i>后台管理</a>
+    <a href="/admin/sign_out" class="close"><i class="fa fa-power-off pr10"></i>退出</a>
+  </header>
+  <nav class="sidebar">
+    <ul>
+         <li class="<%= 'active' if controller_name == 'services' %>">
+          <%= link_to "服务项目", admin_services_path %><i class="fa fa-angle-right arrow"></i>
+        </li>
+        <li class="<%= 'active' if controller_name == 'service_items' %>">
+          <%= link_to "服务项目内容", admin_service_items_path %><i class="fa fa-angle-right arrow"></i>
+        </li>
+        <li class="<%= 'active' if controller_name == 'advts' %>">
+          <%= link_to "广告图", admin_advts_path %><i class="fa fa-angle-right arrow"></i>
+        </li>
+        <li class="<%= 'active' if controller_name == 'intros' %>">
+          <%= link_to "公司介绍", admin_intros_path %><i class="fa fa-angle-right arrow"></i>
+        </li>
+         <li class="<%= 'active' if controller_name == 'questions' %>">
+          <%= link_to "常见问题", admin_intros_path %><i class="fa fa-angle-right arrow"></i>
+        </li>
+       
+    </ul>
+  </nav>
+  <div class="con">
+    <%= yield %>
+  </div>
+  <footer>
+    <section class="footerbox"><a href="http://www.dface.cn" target="_blank" class="linkstyle">脸脸</a>&nbsp;技术支持 &copy; 2014-2015</section>
+  </footer>
+</main>
+<script type="text/javascript">
+    function WindowResize(){
+     setTimeout(function(){
+      if($(document).height()>$(window).height()){
+        $("html").css("height","auto");
+       }else{
+        $("html").css("height","100%");
+       }
+     },100);
+    }
+    $(window).resize(function(){
+      WindowResize();
+    });
+    $(window).load(function(){
+      WindowResize();
+    });
+  </script>
+</body>
+</html>

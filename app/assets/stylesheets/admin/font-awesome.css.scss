@@ -1,0 +1,62 @@
+@font-face {
+  font-family: 'FontAwesome';
+  src: asset-url('fontawesome-webfont.eot');
+  src: asset-url('fontawesome-webfont.eot') format('embedded-opentype'), asset-url('fontawesome-webfont.woff') format('woff'), asset-url('fontawesome-webfont.ttf') format('truetype'), asset-url('fontawesome-webfont.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa{
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fa-angle-right:before {
+  content: "\f105";
+}
+.fa-check:before {
+  content: "\f00c";
+}
+.fa-calendar:before {
+  content: "\f073";
+}
+.fa-clock-o:before {
+  content: "\f017";
+}
+.fa-credit-card:before {
+  content: "\f09d";
+}
+.fa-hdd-o:before {
+  content: "\f0a0";
+}
+.fa-leaf:before {
+  content: "\f06c";
+}
+.fa-power-off:before {
+  content: "\f011";
+}
+.fa-pencil:before {
+  content: "\f040";
+}
+.fa-pencil-square-o:before {
+  content: "\f044";
+}
+.fa-plus:before {
+  content: "\f067";
+}
+.fa-trash-o:before {
+  content: "\f014";
+}
+.fa-search-plus:before {
+  content: "\f00e";
+}
+.fa-share:before {
+  content: "\f064";
+}
+.fa-undo:before {
+  content: "\f0e2";
+}

@@ -1,0 +1,13 @@
+current directory: /home/pulsen/workspace/xia/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+/usr/bin/ruby2.3 -I /usr/local/lib/site_ruby/2.3.0 -r ./siteconf20190214-6269-ksf9gb.rb extconf.rb
+creating Makefile
+
+current directory: /home/pulsen/workspace/xia/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" clean
+
+current directory: /home/pulsen/workspace/xia/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR="
+make: Nothing to be done for 'all'.
+
+current directory: /home/pulsen/workspace/xia/vendor/bundle/ruby/2.3.0/gems/json-1.8.6/ext/json
+make "DESTDIR=" install
