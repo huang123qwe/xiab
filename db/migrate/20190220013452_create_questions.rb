@@ -4,7 +4,6 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :name
       t.string :desc
       t.text :content
-      t.integer :status
       t.timestamps null: false
     end
   end
