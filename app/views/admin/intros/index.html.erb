@@ -1,1 +1,44 @@
-index.html.erb
+<div class="title">
+    <h2><i class="fa fa-pencil-square-o"></i>公司介绍</h2>
+</div>
+<%= form_for [:admin, @intro] do |f| %>
+  <table class="tab2 mt20">
+    <tr>
+      <td>
+        公司名称<%= f.text_field :name, class: "texts2  ml20 w465" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        公司图片<%= f.file_field :image, class: "texts2  ml20" %>
+        <%=image_tag @intro.image_url, class: "h100 w100"%>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        公司电话<%= f.text_field :desc, class: "texts2  ml20" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        公司法人<%= f.text_field :user, class: "texts2  ml20" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        公司简介<%= f.text_area :desc, class: "texts2  ml20" %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        详细介绍<%= f.text_field :desc, class: "texts2  ml20" %>
+      </td>
+    </tr>
+    <tr>
+      <td class="bold right">&nbsp;</td>
+      <td>
+        <button class="btn3 mt20" type="submit"><i class="fa fa-check"></i>完成</button>
+      </td>
+    </tr>
+  </table>
+<% end %>

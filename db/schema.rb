@@ -16,14 +16,19 @@ ActiveRecord::Schema.define(version: 20190220013452) do
   create_table "advts", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "image",      limit: 255
-    t.integer  "status",     limit: 4,   default: 0
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "intros", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "tel",        limit: 255
+    t.string   "desc",       limit: 255
+    t.string   "user",       limit: 255
+    t.string   "image",      limit: 255
+    t.text     "context",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "news", force: :cascade do |t|
@@ -35,24 +40,21 @@ ActiveRecord::Schema.define(version: 20190220013452) do
     t.string   "name",       limit: 255
     t.string   "desc",       limit: 255
     t.text     "content",    limit: 65535
-    t.integer  "status",     limit: 4
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
   create_table "service_items", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.integer  "service_oid", limit: 4
-    t.text     "content",     limit: 65535
-    t.string   "desc",        limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",       limit: 255
+    t.integer  "service_id", limit: 4
+    t.text     "content",    limit: 65535
+    t.string   "desc",       limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "services", force: :cascade do |t|
     t.string   "name",       limit: 255
-    t.integer  "status",     limit: 4
-    t.integer  "od",         limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

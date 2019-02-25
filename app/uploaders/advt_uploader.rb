@@ -20,9 +20,7 @@ class AdvtUploader < CarrierWave::Uploader::Base
   #
   #   "/images/fallback/" + [version_name, "default.png"].compact.join('_')
   # 
-  version :thumb do
-    process resize_to_fill: [200,200]
-  end
+
 
   # Process files as they are uploaded:
   # process scale: [200, 300]

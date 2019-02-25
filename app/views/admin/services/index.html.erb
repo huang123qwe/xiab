@@ -1,10 +1,10 @@
 <div class="title">
    <%= form_tag admin_advts_path, method: :get do %>
-    <h2><i class="fa fa-pencil-square-o"></i>题目管理</h2>
+    <h2><i class="fa fa-pencil-square-o"></i>服务项目</h2>
     <div class="titlebox">
     <!--   <%= text_field_tag :name, params[:name], class: "texts w300 mt10", placeholder: '输入商家名称' %>
       <button class="btn1 mlr8" type="submit"><i class="glyphicon glyphicon-search"></i>搜索</button> -->
-      <a class="btn2" href="/admin/advts/new"><i class="fa fa-plus"></i>添加图片</a>
+      <a class="btn2" href="/admin/services/new"><i class="fa fa-plus"></i>添加项目</a>
     </div>
   <% end %> 
 </div>
@@ -13,21 +13,16 @@
   <table class="tab1 mt30">
     <thead>
       <tr>
-        <th>序号</th>
         <th>名称</th>
-        <th>图片</th>
         <th>操作</th>
       </tr>
     </thead>
     <tbody>
-      <% @advts.each do |advt| %>
+      <% @services.each do |service| %>
         <tr class="center">
-          <td><%= advt.id %></td>
-          <td><%= advt.name %></td>
-          <td><%=image_tag advt.image_url :thumb%></td>
-          <td class="action-buttons">
-            <%= link_to "", admin_advt_path(advt), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
-            <%= link_to "删除", [:admin, advt], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
+          <td><%= service.name %></td>
+          <td >
+            <%= link_to "删除", [:admin, service], method: :delete, data: {confirm: "确定删除?"}, title:"删除" %>
           </td>
         </tr>
       <% end %>

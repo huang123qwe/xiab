@@ -1,7 +1,6 @@
 class Admin::IntrosController < AdminBaseController
   def index
-      @intro = Intro.find_by(1)
-
+      @intro = Intro.last
   end
 
   def edit
@@ -9,11 +8,13 @@ class Admin::IntrosController < AdminBaseController
   end
 
   def update
-
+  	intro = Intro.find_by(params[:id])
+  	intro.update(intro_params)
+  	redirect_to admin_intros_path
   end
 
   private 
-  def advt_params
-      params.require(:advt).permit(:name, :image)
-    end
+  def intro_params
+      params.require(:intro).permit(:name, :image, :tel, :user, :desc, :content)
+  end
 end

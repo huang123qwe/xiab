@@ -24,7 +24,7 @@
         <tr class="center">
           <td><%= advt.id %></td>
           <td><%= advt.name %></td>
-          <td><%=image_tag advt.image_url :thumb%></td>
+          <td><%=image_tag advt.image_url%></td>
           <td class="action-buttons">
             <%= link_to "", admin_advt_path(advt), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
             <%= link_to "删除", [:admin, advt], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>

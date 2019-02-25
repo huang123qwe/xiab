@@ -7,9 +7,20 @@ class Admin::ServicesController <  AdminBaseController
     @service = Service.new
   end
 
+  def create
+    Service.create(params_permit)
+    redirect_to admin_services_path
+  end 
+
+
+  def destroy
+    Service.find_by(params[:id]).delete
+    redirect_to admin_services_path
+  end
+
 
   private 
   def params_permit
-    params.require(:services).permit(:name, :image)
+    params.require(:service).permit(:name)
   end
 end
