@@ -7,8 +7,13 @@ class Admin::ServiceItemsController <  AdminBaseController
     @service_item = ServiceItem.new
   end
 
+  def show
+    @service_item = ServiceItem.find_by_id(params[:id])
+  end
+
   def create
-    
+    @service_item = ServiceItem.new(params_permit)
+    @service_item.save
   end
 
   def destory
@@ -18,6 +23,6 @@ class Admin::ServiceItemsController <  AdminBaseController
 
   private 
   def params_permit
-    params.require(:service_items).permit(:name, :image)
+    params.require(:service_items).permit(:service_id,  :desc, :context)
   end
 end

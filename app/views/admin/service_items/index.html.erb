@@ -1,10 +1,8 @@
 <div class="title">
-   <%= form_tag admin_advts_path, method: :get do %>
-    <h2><i class="fa fa-pencil-square-o"></i>题目管理</h2>
+   <%= form_tag admin_service_items_path, method: :get do %>
+    <h2><i class="fa fa-pencil-square-o"></i>项目内容</h2>
     <div class="titlebox">
-    <!--   <%= text_field_tag :name, params[:name], class: "texts w300 mt10", placeholder: '输入商家名称' %>
-      <button class="btn1 mlr8" type="submit"><i class="glyphicon glyphicon-search"></i>搜索</button> -->
-      <a class="btn2" href="/admin/advts/new"><i class="fa fa-plus"></i>添加图片</a>
+      <a class="btn2" href="/admin/service_items/new"><i class="fa fa-plus"></i>添加内容</a>
     </div>
   <% end %> 
 </div>
@@ -13,21 +11,19 @@
   <table class="tab1 mt30">
     <thead>
       <tr>
-        <th>序号</th>
-        <th>名称</th>
-        <th>图片</th>
+        <th>所属项目</th>
+        <th>内容简介</th>
         <th>操作</th>
       </tr>
     </thead>
     <tbody>
-      <% @advts.each do |advt| %>
+      <% @service_items.each do |service_item| %>
         <tr class="center">
-          <td><%= advt.id %></td>
-          <td><%= advt.name %></td>
-          <td><%=image_tag advt.image_url :thumb%></td>
+          <td><%= Service.find_by_id(service_item.service_id).try(:name) %></td>
+          <td><%= service_item.desc %></td>
           <td class="action-buttons">
-            <%= link_to "", admin_advt_path(advt), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
-            <%= link_to "删除", [:admin, advt], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
+            <%= link_to "", admin_service_item_path(service_item), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
+            <%= link_to "删除", [:admin, service_item], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
           </td>
         </tr>
       <% end %>

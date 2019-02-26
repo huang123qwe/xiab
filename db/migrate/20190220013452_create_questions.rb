@@ -6,9 +6,6 @@ class CreateQuestions < ActiveRecord::Migration
       t.text :content
       t.timestamps null: false
     end
-    execute <<-SQL
-            insert questions(name, created_at, updated_at) value ("123", now(), now())
-          SQL
   end
 end
 

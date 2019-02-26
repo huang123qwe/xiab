@@ -1,28 +1,31 @@
 <div class="title">
-    <h2><i class="fa fa-pencil-square-o"></i>添加轮播图</h2>
+    <h2><i class="fa fa-pencil-square-o"></i>项目内容</h2>
 </div>
-<%= form_for [:admin, @advt], html: {id:"Forms", role: "form" }  do |f| %>
+<%= form_for [:admin, @service_item], html: {id:"Forms", role: "form" }  do |f| %>
   <table class="tab2 mt20">
     <tr>
-      <td width="100" class="bold right">图片名称</td>
+      <td width="100" class="bold right">所属项目</td>
       <td>
-        <%= f.text_field :name, class: "texts2 w450 l", required:"on", autofocus:"on", autocomplete:"off", placeholder: "图片名称不能为空" %>
+        <%= f.select :service_id, options_for_select(Service.all.map{|x| [x.name, x.id]}), {}, class: "" %>
         <span class="notice">*</span>
       </td>
     </tr>
   
     <tr>
-      <td class="bold right" valign="top">图片</td>
+      <td width="100" class="bold right">简答描述</td>
       <td>
-        <a onClick="ImageUpload('UploadFile1','prizeImgup1')" class="thumbnail pointer" id="prizeImgup1">
-        
-            上传图片
-          
-        </a>
-        <%= f.file_field :image, class: "prizeImgfile none", id: "UploadFile1" %>
+        <%= f.text_area :desc %>
         <span class="notice">*</span>
       </td>
     </tr>
+
+    <tr>
+      <td width="100" class="bold right">详细内容</td>
+      <td>
+        <%= f.kindeditor :context %>
+      </td>
+    </tr>
+
     <tr>
         <td>&nbsp;</td>
         <td style="padding-top:75px;">

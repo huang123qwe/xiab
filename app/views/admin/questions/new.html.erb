@@ -1,28 +1,30 @@
 <div class="title">
-    <h2><i class="fa fa-pencil-square-o"></i>添加轮播图</h2>
+    <h2><i class="fa fa-pencil-square-o"></i>添加问答</h2>
 </div>
 <%= form_for [:admin, @advt], html: {id:"Forms", role: "form" }  do |f| %>
   <table class="tab2 mt20">
     <tr>
-      <td width="100" class="bold right">图片名称</td>
+      <td width="100" class="bold right">问:</td>
       <td>
-        <%= f.text_field :name, class: "texts2 w450 l", required:"on", autofocus:"on", autocomplete:"off", placeholder: "图片名称不能为空" %>
+        <%= f.text_field :name, class: "texts2 w450 l", required:"on", autofocus:"on", autocomplete:"off" %>
         <span class="notice">*</span>
       </td>
     </tr>
-  
+
     <tr>
-      <td class="bold right" valign="top">图片</td>
+      <td width="100" class="bold right">答案简介:</td>
       <td>
-        <a onClick="ImageUpload('UploadFile1','prizeImgup1')" class="thumbnail pointer" id="prizeImgup1">
-        
-            上传图片
-          
-        </a>
-        <%= f.file_field :image, class: "prizeImgfile none", id: "UploadFile1" %>
-        <span class="notice">*</span>
+        <%= f.text_area :desc %>
       </td>
     </tr>
+
+    <tr>
+      <td width="100" class="bold right">答案详情:</td>
+      <td>
+        <%= f.kindeditor :content %>
+      </td>
+    </tr>
+
     <tr>
         <td>&nbsp;</td>
         <td style="padding-top:75px;">
@@ -33,83 +35,4 @@
   </table>
 <% end %>
 
-<script type="text/javascript">
-  $("html").addClass("h-auto");
-  /*上面这段段代码的意思是：将html标签的height设置为auto，让模板中的<footer>始终处于底部位置*/
-
-  $(document).ready(function(){
-    if($("#prizeAddr1").prop("checked")){
-      $("#prizeAddr1").closest(".radios").addClass("checked");
-    }else if($("#prizeAddr2").prop("checked")){
-      $("#prizeAddr2").closest(".radios").addClass("checked");
-    }
-
-    $(".radiosbox").click(function(){   //单选按钮
-      $(".radios").removeClass("checked");
-      $(this).find(".radios").addClass("checked");
-      $(this).find("input").prop("checked","checked");
-
-      if($(this).find("input").attr("id")=="prizeAddr1"){
-        $("#PA").css("display","");
-      }else{
-        $("#PA").css("display","none");
-      }
-    });
-
-    $('#cimage_shop_id').change(function(){
-      $.get("/admin/cimages/find_award", {id: $(this).val()}, function(data){
-        var html = '<select id="cimage_award_id" name="cimage[award_id]" class="texts2 w465 l" required="on"><option value="">选择奖品</option>'
-        $(data).each(function(){
-          html += '<option value="' + this.id + '">'+this.name+'</option>'
-        })
-        $("#cimage_award_id").replaceWith(html+'</select>')
-      });
-    });
-  });
-</script>
-
-<script>
-function ImageUpload(target,linkbox){
-  var obj=document.getElementById(target);
-  var pic=$("#"+linkbox);
-  var imgwidth,imgheight;
-  obj.onclick=function(){   //兼容谷歌单击同一张图片不会执行onchange事件，无法打开选择框。
-      obj.value="";
-  }
-
-  obj.click();//打开上传对话框
-
-  obj.onchange=function(){
-
-    var kind=obj.value.substr(obj.value.lastIndexOf(".")).toLowerCase();
-
-    if(kind!=".jpg"&&kind!=".png"&&kind!=".jpeg"&&kind!=".gif"){alert("图片格式不正确，只支持JPG、PNG、GIF"); return false;}
-    if(obj.files[0].size > 1048000){alert("图片文件不能大于1M");return false;}
-
-    var reader = new FileReader();
-    reader.readAsDataURL(obj.files[0]);
-    reader.onload = function(e){
-      old_Obj=obj.files[0];
-      pic.html("<img src='"+this.result+"'/>");
-      if(linkbox=="prizeImgup2"){
-        $("#Mains").css("display","block");
-        $("#Pic").html("<img src='"+this.result+"'/><span class='close' onClick='Close()'></span>");
-        $("#Pic img").load(function(){
-          $("#Pic").css({"width":$("#Pic img").width(),"height":$("#Pic img").height()});
-          if($("#Mains").height()<window.screen.height){
-            $("#Mains").css({"height":"100%"});
-          }
-        });
-      }
-    }
-  }
-}
-
-$("#Forms").submit(function(){
-    if(!$("#prizeImgup1 img").attr("src")){
-      alert("请上传图片");
-      return false;
-    }
-});
-</script>
 
