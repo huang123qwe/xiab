@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'index#index'
-   
+
+
    namespace :admin do 
     resources :services
     resources :intros
@@ -13,6 +14,9 @@ Rails.application.routes.draw do
     resources :service_items
     resources :news
    end
+
+  get "index/:action"
+  match ':index(/:action(/:id))(.:format)', via: :all
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

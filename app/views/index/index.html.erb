@@ -45,7 +45,7 @@ s.parentNode.insertBefore(hm, s);
 <div class="header">
   <div class="top_top">
       <div class="top_c">
-          <div class="top_top_left">无锡清理化粪池_污水雨水管道疏通清洗_无锡清理污水池_夏斌工程！</div>
+          <div class="top_top_left">无锡清理化粪池_污水雨水管道疏通清洗_无锡清理污水池_<%= $intro.name %>！</div>
             <div class="top_top_right"><a href="/">网站首页</a>|<a onClick="this.style.behavior='url(#default#homepage)';this.setHomePage('')" >设为首页</a>|<a href="javascript:window.external.AddFavorite('', '【无锡清理化粪池】_无锡管道疏通清洗_无锡清理污水池_CCTV管道检测_夏斌')">加入收藏</a></div>
             <div class="clear"></div>
         </div>
@@ -53,7 +53,7 @@ s.parentNode.insertBefore(hm, s);
   <div class="top" style=" width: auto;">
       <div class="logo" style="margin-left: 10%;">
         <a href="/">
-          无锡宇辰环保工程有限公司
+          <%= $intro.name %>
         </a>
       </div>
         <div class="tel">
@@ -63,20 +63,25 @@ s.parentNode.insertBefore(hm, s);
     </div>
     <div id="navmenu">
       <ul>
-          <li><a href="/Home/Index/index.html">首页</a></li>
-            <li class="nav11"><a href="/Home/Index/products/id/2.html">服务项目</a></li>
+          <li><a href="/">首页</a></li>
+            <li class="nav11"><a href="/index/product">服务项目</a></li>
             <li class="nav11"><a href="/Home/Index/products/id/12.html">工程案例</a></li>
-            <li class="nav11"><a href="/Home/Index/news/id/7.html">新闻中心</a></li>
-            <li class="nav11"><a href="/Home/Index/info/id/1.html">公司介绍</a></li>
-            <li class="nav11"><a href="/Home/Index/info/id/13.html">联系我们</a></li>           
+            <li class="nav11"><a href="/index/news">新闻中心</a></li>
+            <li class="nav11"><a href="/index/intro">公司介绍</a></li>
+            <li class="nav11"><a href="/index/about">联系我们</a></li>           
             <div class="clear"></div>
         </ul>
     </div>
   <div class="bannner"> 
         <div id="slider" class="nivoSlider">
-          <a target="_blank"><img src="Public/Banner/5ad83f61d406a.jpg" alt="#" title="" width="1920" height="520" /></a>
+            <% $advts.each do |advt|%> 
+                <%=link_to nil, nil, {} do  %>
+                     <a target="_blank"><img src="<%= advt.image_url %>" alt="#" title="" width="1920" height="520" /></a>
+                <% end%>
+            <% end%>
+<!--           <a target="_blank"><img src="Public/Banner/5ad83f61d406a.jpg" alt="#" title="" width="1920" height="520" /></a>
           <a target="_blank"><img src="Public/Banner/58f71d073fa5d.jpg" alt="#" title="" width="1920" height="520" /></a>
-          <a target="_blank"><img src="Public/Banner/58f722f32e599.jpg" alt="#" title="" width="1920" height="520" /></a>        
+          <a target="_blank"><img src="Public/Banner/58f722f32e599.jpg" alt="#" title="" width="1920" height="520" /></a>   -->      
         </div>  
   </div>
 </div> 
@@ -90,8 +95,46 @@ s.parentNode.insertBefore(hm, s);
                     <tr>
                     <td id="demoo1"><table border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td><a href="/Home/Index/productsd/id/118.html" title="管道检测"><img src="Public/Uploads/2017-11-21/5a1396bed159b.png" width="275" height="215" alt="管道检测" /><p>管道检测</p></a></td><td><a href="/Home/Index/productsd/id/119.html" title="管道疏通专业技术精湛"><img src="Public/Uploads/2017-11-21/5a13979d24f49.jpg" width="275" height="215" alt="管道疏通专业技术精湛" /><p>管道疏通专业技术精湛</p></a></td><td><a href="/Home/Index/productsd/id/116.html" title="污水管道清洗-随时欢迎咨询"><img src="Public/Uploads/2017-11-21/5a139527633c0.jpg" width="275" height="215" alt="污水管道清洗-随时欢迎咨询" /><p>污水管道清洗-随时欢迎咨询</p></a></td><td><a href="/Home/Index/productsd/id/110.html" title="雨水管道清洗-清洗效果触眼可及"><img src="Public/Uploads/2017-11-21/5a138def0515d.jpg" width="275" height="215" alt="雨水管道清洗-清洗效果触眼可及" /><p>雨水管道清洗-清洗效果触眼可及</p></a></td><td><a href="/Home/Index/productsd/id/131.html" title="清理污水池-专业服务让您满意"><img src="Public/Uploads/2017-11-21/5a13a86cb6514.jpg" width="275" height="215" alt="清理污水池-专业服务让您满意" /><p>清理污水池-专业服务让您满意</p></a></td><td><a href="/Home/Index/productsd/id/117.html" title="管道检测-管道CCTV检测"><img src="Public/Uploads/2017-11-21/5a1395cb01ee8.jpg" width="275" height="215" alt="管道检测-管道CCTV检测" /><p>管道检测-管道CCTV检测</p></a></td>                    </tr>
-                    </table></td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/118.html" title="管道检测">
+                                <img src="Public/Uploads/2017-11-21/5a1396bed159b.png" width="275" height="215" alt="管道检测" />
+                                    <p>管道检测</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/119.html" title="管道疏通专业技术精湛">
+                                <img src="Public/Uploads/2017-11-21/5a13979d24f49.jpg" width="275" height="215" alt="管道疏通专业技术精湛" />
+                                <p>管道疏通专业技术精湛</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/116.html" title="污水管道清洗-随时欢迎咨询">
+                                <img src="Public/Uploads/2017-11-21/5a139527633c0.jpg" width="275" height="215" alt="污水管道清洗-随时欢迎咨询" />
+                                    <p>污水管道清洗-随时欢迎咨询
+                                    </p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/110.html" title="雨水管道清洗-清洗效果触眼可及">
+                                <img src="Public/Uploads/2017-11-21/5a138def0515d.jpg" width="275" height="215" alt="雨水管道清洗-清洗效果触眼可及" />
+                                    <p>雨水管道清洗-清洗效果触眼可及</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/131.html" title="清理污水池-专业服务让您满意">
+                                <img src="Public/Uploads/2017-11-21/5a13a86cb6514.jpg" width="275" height="215" alt="清理污水池-专业服务让您满意" />
+                                <p>清理污水池-专业服务让您满意</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/117.html" title="管道检测-管道CCTV检测">
+                                <img src="Public/Uploads/2017-11-21/5a1395cb01ee8.jpg" width="275" height="215" alt="管道检测-管道CCTV检测" />
+                                <p>管道检测-管道CCTV检测</p>
+                            </a>
+                        </td>
+                    </tr>
+                    </table>
+                    </td>
                     <td id="demoo2"></td>
                     </tr>
                   </table>
@@ -117,17 +160,18 @@ s.parentNode.insertBefore(hm, s);
     <!----about---->
   <div class="con2">
       <div class="con2-l">
-          <div class="index-t"><p>公司介绍</p><a href="/Home/Index/info/id/3.html">+More</a><div class="clear"></div></div>
+          <div class="index-t"><p>公司介绍</p><a href="/index/intro">+More</a><div class="clear"></div></div>
             <div class="con2-l-c">
                     <img src="Public/images/about.png" />
                     <div class="about-r">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;无锡无锡夏斌工程有限公司坐落于美丽的太湖之滨—无锡。是经江苏省无锡市工商局、环保局批准的专业从事环保工程；市政管道清洗疏通工程；工业废水、污水化粪池处理工程为一体的大型综合性工程服务公司。<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎新老客户随时来电咨询洽谈，希望我们的事业发展能得到您们大力支持，预祝我们合作愉快 ！<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <%= $intro.name %>坐落于美丽的太湖之滨—无锡。是经江苏省无锡市工商局、环保局批准的专业从事环保工程；市政管道清洗疏通工程；工业废水、污水化粪池处理工程为一体的大型综合性工程服务公司。<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;欢迎新老客户随时来电咨询洽谈，希望我们的事业发展能得到您们大力支持，预祝我们合作愉快 ！<br />
                     </div>
             </div>
         </div>
         <div class="con2-ce">
-          <div class="index-t"><p>公司新闻</p><a href="/Home/Index/news/id/7.html">+More</a><div class="clear"></div></div>
+          <div class="index-t"><p>公司新闻</p><a href="/index/news">+More</a><div class="clear"></div></div>
             <div class="newstop1">
                     <img src="Public/Uploads/2018-11-21/5bf50296ea5f0.jpg" />
                     <div class="newstop1-r">
@@ -135,8 +179,20 @@ s.parentNode.insertBefore(hm, s);
                         <span>为了充分展现无锡这座城市良好的市容市貌，政府就要定期开展环卫所抽粪工作，</span>
                     </div>
                     <div class="clear"></div>
-                </div>            <ul class="indexnewslist">
-                 <li><a href="/Home/Index/newsd/id/174.html">为何要定期开展无锡环卫所抽粪工作？</a><span>2018-11-21</span></li><li><a href="/Home/Index/newsd/id/169.html">无锡化粪池清理不当可能引发的后果</a><span>2018-10-26</span></li><li><a href="/Home/Index/newsd/id/165.html">无锡化粪池清理要按照什么标准收费？</a><span>2018-10-12</span></li><li><a href="/Home/Index/newsd/id/163.html">无锡环卫所抽粪的具体操作流程【厂家分享】</a><span>2018-09-29</span></li><li><a href="/Home/Index/newsd/id/160.html">无锡老小区化粪池长期不清理会有什么后果</a><span>2018-09-20</span></li>            </ul>
+                </div>            
+                <ul class="indexnewslist">
+                    <% @newses.each do |news|%>
+                        <li>
+                            <a href="/Home/Index/newsd/id/174.html">为何要定期开展无锡环卫所抽粪工作？</a>
+                            <span>2018-11-21</span>
+                        </li>
+                    <% end %>
+                 <li><a href="/Home/Index/newsd/id/174.html">为何要定期开展无锡环卫所抽粪工作？</a><span>2018-11-21</span></li>
+                 <li><a href="/Home/Index/newsd/id/169.html">无锡化粪池清理不当可能引发的后果</a><span>2018-10-26</span></li>
+                 <li><a href="/Home/Index/newsd/id/165.html">无锡化粪池清理要按照什么标准收费？</a><span>2018-10-12</span></li>
+                 <li><a href="/Home/Index/newsd/id/163.html">无锡环卫所抽粪的具体操作流程【厂家分享】</a><span>2018-09-29</span></li>
+                 <li><a href="/Home/Index/newsd/id/160.html">无锡老小区化粪池长期不清理会有什么后果</a><span>2018-09-20</span></li>            
+                </ul>
         </div>
         <div class="con2-r">
           <div class="index-t1"><p>联系我们</p></div>
@@ -157,7 +213,12 @@ s.parentNode.insertBefore(hm, s);
       <div class="con1-l">
         <div class="con1-l-t">服务项目 Service Items</div>
           <ul class="iauth">
-            <li><a href="/Home/Index/products/id/18.html" title="清理化粪池">清理化粪池</a></li>
+            <% $services.each do |service| %>
+                <li>
+                    <%=link_to service.name, "", title: service.name %>
+                </li>
+            <% end %>
+         <!--    <li><a href="/Home/Index/products/id/18.html" title="清理化粪池">清理化粪池</a></li>
             <li><a href="/Home/Index/products/id/5.html" title="清理污水池">清理污水池</a></li>
             <li><a href="/Home/Index/products/id/15.html" title="清理隔油池">清理隔油池</a></li>
             <li><a href="/Home/Index/products/id/16.html" title="清理沉淀池">清理沉淀池</a></li>
@@ -169,25 +230,48 @@ s.parentNode.insertBefore(hm, s);
             <li><a href="/Home/Index/products/id/24.html" title="雨水管道清洗">雨水管道清洗</a></li>
             <li><a href="/Home/Index/products/id/25.html" title="环卫所抽粪">环卫所抽粪</a></li>
             <li><a href="/Home/Index/products/id/27.html" title="抽污泥">抽污泥</a></li>
-            <li><a href="/Home/Index/products/id/26.html" title="洒水车出租">洒水车出租</a></li> 
+            <li><a href="/Home/Index/products/id/26.html" title="洒水车出租">洒水车出租</a></li>  -->
           </ul>
         </div>
         <div class="con1-r">
-          <div class="index-t"><p>服务项目</p><a href="/Home/Index/products/id/2">+More</a><div class="clear"></div></div>
+          <div class="index-t"><p>服务项目</p><a href="/index/product">+More</a><div class="clear"></div></div>
           <ul class="cp_list">
-                <li><a href="/Home/Index/productsd/id/118.html" title="管道检测"><img src="Public/Uploads/2017-11-21/5a1396bed159b.png" alt="管道检测" />
+                <li>
+                    <a href="/Home/Index/productsd/id/118.html" title="管道检测">
+                    <img src="Public/Uploads/2017-11-21/5a1396bed159b.png" alt="管道检测" />
                     <p>管道检测</p>
-                    </a></li><li><a href="/Home/Index/productsd/id/119.html" title="管道疏通专业技术精湛"><img src="Public/Uploads/2017-11-21/5a13979d24f49.jpg" alt="管道疏通专业技术精湛" />
-                    <p>管道疏通专业技术精湛</p>
-                    </a></li><li><a href="/Home/Index/productsd/id/110.html" title="雨水管道清洗-清洗效果触眼可及"><img src="Public/Uploads/2017-11-21/5a138def0515d.jpg" alt="雨水管道清洗-清洗效果触眼可及" />
-                    <p>雨水管道清洗-清洗效果触眼可及</p>
-                    </a></li><li><a href="/Home/Index/productsd/id/117.html" title="管道检测-管道CCTV检测"><img src="Public/Uploads/2017-11-21/5a1395cb01ee8.jpg" alt="管道检测-管道CCTV检测" />
-                    <p>管道检测-管道CCTV检测</p>
-                    </a></li><li><a href="/Home/Index/productsd/id/120.html" title="管道疏通"><img src="Public/Uploads/2017-11-21/5a139876b6303.jpg" alt="管道疏通" />
-                    <p>管道疏通</p>
-                    </a></li><li><a href="/Home/Index/productsd/id/124.html" title="疏通下水道，市政管网疏通"><img src="Public/Uploads/2017-11-21/5a139a0ae97ea.jpg" alt="疏通下水道，市政管网疏通" />
-                    <p>疏通下水道，市政管网疏通</p>
-                    </a></li>   
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/Index/productsd/id/119.html" title="管道疏通专业技术精湛">
+                        <img src="Public/Uploads/2017-11-21/5a13979d24f49.jpg" alt="管道疏通专业技术精湛" />
+                        <p>管道疏通专业技术精湛</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/Index/productsd/id/110.html" title="雨水管道清洗-清洗效果触眼可及">
+                        <img src="Public/Uploads/2017-11-21/5a138def0515d.jpg" alt="雨水管道清洗-清洗效果触眼可及" />
+                        <p>雨水管道清洗-清洗效果触眼可及</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/Index/productsd/id/117.html" title="管道检测-管道CCTV检测">
+                        <img src="Public/Uploads/2017-11-21/5a1395cb01ee8.jpg" alt="管道检测-管道CCTV检测" />
+                        <p>管道检测-管道CCTV检测</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/Index/productsd/id/120.html" title="管道疏通">
+                        <img src="Public/Uploads/2017-11-21/5a139876b6303.jpg" alt="管道疏通" />
+                        <p>管道疏通</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Home/Index/productsd/id/124.html" title="疏通下水道，市政管网疏通">
+                        <img src="Public/Uploads/2017-11-21/5a139a0ae97ea.jpg" alt="疏通下水道，市政管网疏通" />
+                        <p>疏通下水道，市政管网疏通</p>
+                    </a>
+                </li>   
                 <div class="clear"></div>
             </ul>
         </div>
@@ -203,8 +287,69 @@ s.parentNode.insertBefore(hm, s);
                     <tr>
                     <td id="case1"><table border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td><a href="/Home/Index/productsd/id/56.html"><img src="Public/Uploads/2016-11-02/5819d89139035.jpg" width="275" height="215" /><p>雨水管道清洗案例</p></a></td><td><a href="/Home/Index/productsd/id/57.html"><img src="Public/Uploads/2016-11-02/5819d8c3ec692.jpg" width="275" height="215" /><p>污水管道清理案例</p></a></td><td><a href="/Home/Index/productsd/id/58.html"><img src="Public/Uploads/2016-11-02/5819d8e7c3df5.gif" width="275" height="215" /><p>管理疏通案例</p></a></td><td><a href="/Home/Index/productsd/id/59.html"><img src="Public/Uploads/2016-11-02/5819d906e289c.gif" width="275" height="215" /><p>污水管理清理案例</p></a></td><td><a href="/Home/Index/productsd/id/60.html"><img src="Public/Uploads/2016-11-02/5819d9334d5e6.jpg" width="275" height="215" /><p>工业污水管道清洗</p></a></td><td><a href="/Home/Index/productsd/id/61.html"><img src="Public/Uploads/2016-11-02/5819d9534955d.jpg" width="275" height="215" /><p>化粪池清理现场</p></a></td><td><a href="/Home/Index/productsd/id/62.html"><img src="Public/Uploads/2016-11-02/5819d97444c9d.jpg" width="275" height="215" /><p>疏通下水道现场</p></a></td><td><a href="/Home/Index/productsd/id/63.html"><img src="Public/Uploads/2016-11-02/5819d9c13c391.jpg" width="275" height="215" /><p>高压管道清洗现场</p></a></td><td><a href="/Home/Index/productsd/id/64.html"><img src="Public/Uploads/2016-11-02/5819d9e010475.jpg" width="275" height="215" /><p>污水管理清理现场</p></a></td><td><a href="/Home/Index/productsd/id/65.html"><img src="Public/Uploads/2016-11-02/5819da139bb5b.jpg" width="275" height="215" /><p>环卫所抽粪现场</p></a></td>                    </tr>
-                    </table></td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/56.html">
+                                <img src="Public/Uploads/2016-11-02/5819d89139035.jpg" width="275" height="215" />
+                                <p>雨水管道清洗案例</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/57.html">
+                                <img src="Public/Uploads/2016-11-02/5819d8c3ec692.jpg" width="275" height="215" />
+                                <p>污水管道清理案例</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/58.html">
+                                <img src="Public/Uploads/2016-11-02/5819d8e7c3df5.gif" width="275" height="215" />
+                                <p>管理疏通案例</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/59.html">
+                                <img src="Public/Uploads/2016-11-02/5819d906e289c.gif" width="275" height="215" />
+                                <p>污水管理清理案例</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/60.html">
+                                <img src="Public/Uploads/2016-11-02/5819d9334d5e6.jpg" width="275" height="215" />
+                                <p>工业污水管道清洗</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/61.html">
+                                <img src="Public/Uploads/2016-11-02/5819d9534955d.jpg" width="275" height="215" />
+                                <p>化粪池清理现场</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/62.html">
+                                <img src="Public/Uploads/2016-11-02/5819d97444c9d.jpg" width="275" height="215" />
+                                <p>疏通下水道现场</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/63.html">
+                                <img src="Public/Uploads/2016-11-02/5819d9c13c391.jpg" width="275" height="215" />
+                                <p>高压管道清洗现场</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/64.html">
+                                <img src="Public/Uploads/2016-11-02/5819d9e010475.jpg" width="275" height="215" />
+                                <p>污水管理清理现场</p>
+                            </a>
+                        </td>
+                        <td>
+                            <a href="/Home/Index/productsd/id/65.html">
+                                <img src="Public/Uploads/2016-11-02/5819da139bb5b.jpg" width="275" height="215" />
+                                <p>环卫所抽粪现场</p>
+                            </a>
+                        </td>                    
+                        </tr>
+                    </table>
+                    </td>
                     <td id="case2"></td>
                     </tr>
                   </table>
@@ -231,7 +376,11 @@ s.parentNode.insertBefore(hm, s);
     <!----news---->
     <div class="news">
         <div class="news-l">
-            <div class="inews-t"><div class="new-t"><a href="#" class="gsxw" style="">公司公告</a><a href="#" style="" class="hyxw">行业新闻</a></div><a href="/Home/Index/news/id/7.html" class="newsmore">+More</a></div>
+            <div class="inews-t"><div class="new-t">
+                <a href="#" class="gsxw" style="">公司公告</a>
+                <a href="#" style="" class="hyxw">行业新闻</a>
+            </div>
+            <a href="/Home/Index/news/id/7.html" class="newsmore">+More</a></div>
             <div class="news-c">
                 <div class="gsxwc">
                     <div class="newstop">
@@ -242,9 +391,31 @@ s.parentNode.insertBefore(hm, s);
                         <a href="/Home/Index/newsd/id/171.html" class="more">查看更多</a>
                         </div>
                         <div class="clear"></div>
-                    </div>                    <ul class="newslist">
-                         <li><a href="/Home/Index/newsd/id/175.html">厨房下水道堵了该如何疏通？君得利为你排忧！</a><span>[2018-11-28]</span></li><li><a href="/Home/Index/newsd/id/173.html">定期疏通下水道能有效解决管道异味问题</a><span>[2018-11-16]</span></li><li><a href="/Home/Index/newsd/id/171.html">如何解决无锡管道疏通中的漏水问题</a><span>[2018-11-01]</span></li><li><a href="/Home/Index/newsd/id/170.html">无锡雨水管道清洗掌握方法很重要</a><span>[2018-10-30]</span></li><li><a href="/Home/Index/newsd/id/168.html">无锡清理污水池要制定安全作业规程</a><span>[2018-10-24]</span></li>                    </ul>
+                    </div>                    
+                        <ul class="newslist">
+                            <li>
+                                <a href="/Home/Index/newsd/id/175.html">厨房下水道堵了该如何疏通？君得利为你排忧！</a>
+                                <span>[2018-11-28]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/173.html">定期疏通下水道能有效解决管道异味问题</a>
+                                <span>[2018-11-16]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/171.html">如何解决无锡管道疏通中的漏水问题</a>
+                                <span>[2018-11-01]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/170.html">无锡雨水管道清洗掌握方法很重要</a>
+                                <span>[2018-10-30]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/168.html">无锡清理污水池要制定安全作业规程</a>
+                                <span>[2018-10-24]</span>
+                            </li>                    
+                        </ul>
                 </div>
+
                 <div class="hyxwc" style=" display:none;">
                      <div class="newstop">
                         <img src="Public/Uploads/2016-12-15/5851f45d0332d.jpg" />
@@ -254,8 +425,29 @@ s.parentNode.insertBefore(hm, s);
                         <a href="/Home/Index/newsd/id/55.html" class="more">查看更多</a>
                         </div>
                         <div class="clear"></div>
-                    </div>                    <ul class="newslist">
-                        <li><a href="/Home/Index/newsd/id/60.html">无锡污水管道疏通前的全面检查工作</a><span>[2017-01-10]</span></li><li><a href="/Home/Index/newsd/id/59.html">化粪池清理工作的注意流程</a><span>[2017-01-04]</span></li><li><a href="/Home/Index/newsd/id/55.html">清理化粪池的流程和规范</a><span>[2016-12-15]</span></li><li><a href="/Home/Index/newsd/id/52.html">疏通下水道之防止室内排水管道堵塞</a><span>[2016-11-29]</span></li><li><a href="/Home/Index/newsd/id/51.html">为什么要定期清理化粪池呢</a><span>[2016-11-25]</span></li>                    </ul>
+                    </div>                    
+                        <ul class="newslist">
+                            <li>
+                                <a href="/Home/Index/newsd/id/60.html">无锡污水管道疏通前的全面检查工作</a>
+                                <span>[2017-01-10]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/59.html">化粪池清理工作的注意流程</a>
+                                <span>[2017-01-04]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/55.html">清理化粪池的流程和规范</a>
+                                <span>[2016-12-15]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/52.html">疏通下水道之防止室内排水管道堵塞</a>
+                                <span>[2016-11-29]</span>
+                            </li>
+                            <li>
+                                <a href="/Home/Index/newsd/id/51.html">为什么要定期清理化粪池呢</a>
+                                <span>[2016-11-25]</span>
+                            </li>                    
+                        </ul>
                 </div>
             </div>
         </div>
@@ -267,12 +459,22 @@ s.parentNode.insertBefore(hm, s);
                     <tr>
                        <td id="udemo1">
                             <table width="100%" height="99" border="0" cellpadding="0" cellspacing="0">
-                            
-                               
                                     <tr>
                                         <td>
                                          <ul class="i-question">
-                                         <li>
+                                            <% $questions.each do |question| %>
+                                                <li>
+                                                    <p class="que1">
+                                                        <%= link_to question.name, "/index/question/#{question.id}" %>
+                                                    </p>
+                                                    <p class="que2">
+                                                        <%= truncate(question.desc, length = 25, truncate_string = "...")%>
+                                                        <%= link_to [详情], "/index/question/#{question.id}" %>
+                                                    </p>
+                                                </li>
+                                            <% end %>
+
+                                       <!--   <li>
                                                     <p class="que1"><a href="/Home/Index/newsd/id/54.html">化粪池清理周期一般是多久？【已解决】</a></p>
                                                     <p class="que2">化粪池里因沉淀大量的人畜粪便和生活污水，长期沉淀后会...
                                                     <a href="/Home/Index/newsd/id/54.html">[详情]</a></p>
@@ -304,7 +506,7 @@ s.parentNode.insertBefore(hm, s);
                                                     <p class="que1"><a href="/Home/Index/newsd/id/43.html">工厂里清理化粪池需要提前打开井盖通风吗？</a></p>
                                                     <p class="que2">清理化粪池水面无漂浮物，池壁基本清洁，功课现场基本卫...
                                                     <a href="/Home/Index/newsd/id/43.html">[详情]</a></p>
-                                             </li>      
+                                             </li>     -->  
                                          </ul>
                                         </td>
                                   </tr>
@@ -346,11 +548,18 @@ s.parentNode.insertBefore(hm, s);
       <div class="links-titl"><a href="#" class="fz">合作分站</a>|<a href="#" class="yq">友情链接</a></div>
         <div class="links-c">
           <ul class="fenz">
-                              <div class="clear"></div>
+            <div class="clear"></div>
             </ul>
-            
             <ul class="ilink" style="display:none;">
-              <li><a href="http://www.sthbgc.com" target="_blank">无锡管道疏通</a></li><li><a href="/Home/Index/info/id/28.html" target="_blank">无锡管道CCTV检测</a></li><li><a href="http://www.rjhwfw.com/" target="_blank">无锡cctv管道维修</a></li><li><a href="http://www.jsrxt.com/" target="_blank">无锡管道疏通</a></li><li><a href="http://www.jzmodel.cn/" target="_blank">苏州清理化粪池</a></li><li><a href="http://www.jdtgd.com/" target="_blank">无锡管道封堵检测</a></li><li><a href="http://www.sh-wzhb.com/" target="_blank">常州移动厕所出租</a></li><li><a href="http://www.cqzhengqin.com/" target="_blank">民防体验馆设计</a></li>                <div class="clear"></div>
+              <li><a href="/" target="_blank">无锡管道疏通</a></li>
+              <li><a href="/Home/Index/info/id/28.html" target="_blank">无锡管道CCTV检测</a></li>
+              <li><a href="http://www.rjhwfw.com/" target="_blank">无锡cctv管道维修</a></li>
+              <li><a href="http://www.jsrxt.com/" target="_blank">无锡管道疏通</a></li>
+              <li><a href="http://www.jzmodel.cn/" target="_blank">苏州清理化粪池</a></li>
+              <li><a href="http://www.jdtgd.com/" target="_blank">无锡管道封堵检测</a></li>
+              <li><a href="http://www.sh-wzhb.com/" target="_blank">常州移动厕所出租</a></li>
+              <li><a href="http://www.cqzhengqin.com/" target="_blank">民防体验馆设计</a></li>                
+              <div class="clear"></div>
             </ul>
         </div>
     </div>
@@ -369,15 +578,31 @@ s.parentNode.insertBefore(hm, s);
 
 <div class="footer">
   <ul>
-        <li><a href="/Home/Index/index.html">首页</a></li>
-            <li class="nav11"><a href="/Home/Index/products/id/2.html">服务项目</a></li><li class="nav11"><a href="/Home/Index/info/id/28.html">管道检测</a></li><li class="nav11"><a href="/Home/Index/news/id/7.html">新闻中心</a></li><li class="nav11"><a href="/Home/Index/products/id/11.html">设备展示</a></li><li class="nav11"><a href="/Home/Index/products/id/12.html">工程案例</a></li><li class="nav11"><a href="/Home/Index/info/id/1.html">公司介绍</a></li><li class="nav11"><a href="/Home/Index/info/id/13.html">联系我们</a></li>            <div class="clear"></div>
+        <li><a href="/">首页</a></li>
+        <li class="nav11"><a href="/Home/Index/products/id/2.html">服务项目</a></li>
+        <li class="nav11"><a href="/Home/Index/info/id/28.html">管道检测</a></li>
+        <li class="nav11"><a href="/Home/Index/news/id/7.html">新闻中心</a></li>
+        <li class="nav11"><a href="/Home/Index/products/id/11.html">设备展示</a></li>
+        <li class="nav11"><a href="/Home/Index/products/id/12.html">工程案例</a></li>
+        <li class="nav11"><a href="/Home/Index/info/id/1.html">公司介绍</a></li>
+        <li class="nav11"><a href="/Home/Index/info/id/13.html">联系我们</a></li>            
+        <div class="clear"></div>
         <div class="clear"></div>
     </ul>
     
     <div class="footer-content">
      Copyright 无锡夏斌工程有限公司 版权所有 电话：0510-85203335 传真：0510-85203335<br />
-联系人：沈经理 手机：15052215566  地址：无锡市新吴区净慧东道78号 网址：<br />
-主营服务:,<a href="/">无锡新区环卫所抽粪</a>,<a href="/">无锡管道清洗</a>,<a href="/">无锡清理化粪池</a>,<a href="/">无锡污水管道疏通</a> 技术支持：<a href="http://www.wxee.net" target="_blank" style="color:#fff;" >无锡网络公司</a> <a href="/sitemap.html">网站地图</a> <br/>备案号：<a href="http://www.miitbeian.gov.cn/"rel="nofollow">苏ICP备14001826号</a>    </div>
+    联系人：沈经理 手机：15052215566  地址：无锡市新吴区净慧东道78号 网址：<br />
+    主营服务:,
+    <a href="/">无锡新区环卫所抽粪</a>,
+    <a href="/">无锡管道清洗</a>,
+    <a href="/">无锡清理化粪池</a>,
+    <a href="/">无锡污水管道疏通</a> 
+    技术支持：
+    <a href="http://www.wxee.net" target="_blank" style="color:#fff;" >无锡网络公司</a> <a href="/sitemap.html">网站地图</a> <br/>
+    备案号：
+    <a href="http://www.miitbeian.gov.cn/"rel="nofollow">苏ICP备14001826号</a>    
+    </div>
     
 </div>
 <script src="http://stat.xiaonaodai.com/stat.php?id=6930415" language="JavaScript" type="text/javascript"></script>
