@@ -14,6 +14,9 @@
   </header>
   <nav class="sidebar">
     <ul>
+        <li class="<%= 'active' if controller_name == 'intros' %>">
+          <%= link_to "公司介绍", admin_intros_path %><i class="fa fa-angle-right arrow"></i>
+        </li>
          <li class="<%= 'active' if controller_name == 'services' %>">
           <%= link_to "服务项目", admin_services_path %><i class="fa fa-angle-right arrow"></i>
         </li>
@@ -23,11 +26,11 @@
         <li class="<%= 'active' if controller_name == 'advts' %>">
           <%= link_to "广告图", admin_advts_path %><i class="fa fa-angle-right arrow"></i>
         </li>
-        <li class="<%= 'active' if controller_name == 'intros' %>">
-          <%= link_to "公司介绍", admin_intros_path %><i class="fa fa-angle-right arrow"></i>
+        <li class="<%= 'active' if controller_name == 'newes' %>">
+          <%= link_to "行业新闻", admin_newses_path %><i class="fa fa-angle-right arrow"></i>
         </li>
          <li class="<%= 'active' if controller_name == 'questions' %>">
-          <%= link_to "常见问题", admin_intros_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "常见问题", admin_questions_path %><i class="fa fa-angle-right arrow"></i>
         </li>
        
     </ul>

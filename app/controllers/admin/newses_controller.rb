@@ -1,10 +1,14 @@
 class Admin::NewsesController <  AdminBaseController
   def index
-    @newes = News.order("updated_at desc")
+    @newses = News.order("updated_at desc")
   end
 
   def new 
-    @news = News.new
+    @newse = News.new
+  end
+
+  def create
+    @newse = News.new(params_permit)
   end
 
   private 

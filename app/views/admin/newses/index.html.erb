@@ -4,7 +4,7 @@
     <div class="titlebox">
     <!--   <%= text_field_tag :name, params[:name], class: "texts w300 mt10", placeholder: '输入商家名称' %>
       <button class="btn1 mlr8" type="submit"><i class="glyphicon glyphicon-search"></i>搜索</button> -->
-      <a class="btn2" href="/admin/advts/new"><i class="fa fa-plus"></i>添加图片</a>
+      <a class="btn2" href="/admin/newses/new"><i class="fa fa-plus"></i>添加新闻</a>
     </div>
   <% end %> 
 </div>
@@ -13,21 +13,19 @@
   <table class="tab1 mt30">
     <thead>
       <tr>
-        <th>序号</th>
-        <th>名称</th>
-        <th>图片</th>
+        <th>标题</th>
+        <th>简介</th>
         <th>操作</th>
       </tr>
     </thead>
     <tbody>
-      <% @advts.each do |advt| %>
+      <% @newses.each do |newse| %>
         <tr class="center">
-          <td><%= advt.id %></td>
-          <td><%= advt.name %></td>
-          <td><%=image_tag advt.image_url :thumb%></td>
+          <td><%= newse.name %></td>
+          <td><%= newse.desc %></td>
           <td class="action-buttons">
-            <%= link_to "", admin_advt_path(advt), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
-            <%= link_to "删除", [:admin, advt], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
+            <%= link_to "", admin_news_path(newse), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
+            <%= link_to "删除", [:admin, newse], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
           </td>
         </tr>
       <% end %>

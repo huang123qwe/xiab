@@ -12,11 +12,11 @@ Rails.application.routes.draw do
     resources :advts
     resources :questions
     resources :service_items
-    resources :news
+    resources :newses
    end
 
-  get "index/:action"
-  match ':index(/:action(/:id))(.:format)', via: :all
+
+  get 'index/:action' => 'index#product'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
