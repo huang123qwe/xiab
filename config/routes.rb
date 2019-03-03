@@ -7,12 +7,41 @@ Rails.application.routes.draw do
 
 
    namespace :admin do 
-    resources :services
-    resources :intros
-    resources :advts
-    resources :questions
-    resources :service_items
-    resources :newses
+    resources :services do 
+      collection do
+        get 'top'
+      end
+    end
+    resources :intros do 
+      collection do
+        get 'top'
+      end
+    end
+    resources :advts do 
+      collection do
+        get 'top'
+      end
+    end
+    resources :questions do 
+      collection do
+        get 'top'
+      end
+    end
+    resources :service_items do 
+      collection do
+        get 'top'
+      end
+    end
+    resources :newses do 
+      collection do
+        get 'top'
+      end
+    end
+    resources :cases do 
+      collection do
+        get 'top'
+      end
+    end
    end
 
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190220013452) do
+ActiveRecord::Schema.define(version: 20190303124223) do
 
   create_table "advts", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -20,20 +20,33 @@ ActiveRecord::Schema.define(version: 20190220013452) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "cases", force: :cascade do |t|
+    t.string   "image",      limit: 255
+    t.text     "context",    limit: 65535
+    t.string   "name",       limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "intros", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "tel",        limit: 255
     t.string   "desc",       limit: 255
     t.string   "user",       limit: 255
     t.string   "image",      limit: 255
+    t.string   "addr",       limit: 255
+    t.string   "email",      limit: 255
     t.text     "context",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
 
   create_table "news", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       limit: 255
+    t.string   "image",      limit: 255
+    t.text     "context",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "questions", force: :cascade do |t|

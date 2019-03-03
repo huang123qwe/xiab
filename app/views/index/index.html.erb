@@ -93,45 +93,18 @@ s.parentNode.insertBefore(hm, s);
                 <div id="demoo" style="overflow:hidden;height:auto;width:1160px; margin:0px auto;">
                   <table cellpadding="0" cellspace="0" border="0">
                     <tr>
-                    <td id="demoo1"><table border="0" cellspacing="0" cellpadding="0">
+                    <td id="demoo1">
+                    <table border="0" cellspacing="0" cellpadding="0">
                     <tr>
-                        <td>
-                            <a href="/Home/Index/productsd/id/118.html" title="管道检测">
-                                <img src="Public/Uploads/2017-11-21/5a1396bed159b.png" width="275" height="215" alt="管道检测" />
-                                    <p>管道检测</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/119.html" title="管道疏通专业技术精湛">
-                                <img src="Public/Uploads/2017-11-21/5a13979d24f49.jpg" width="275" height="215" alt="管道疏通专业技术精湛" />
-                                <p>管道疏通专业技术精湛</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/116.html" title="污水管道清洗-随时欢迎咨询">
-                                <img src="Public/Uploads/2017-11-21/5a139527633c0.jpg" width="275" height="215" alt="污水管道清洗-随时欢迎咨询" />
-                                    <p>污水管道清洗-随时欢迎咨询
-                                    </p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/110.html" title="雨水管道清洗-清洗效果触眼可及">
-                                <img src="Public/Uploads/2017-11-21/5a138def0515d.jpg" width="275" height="215" alt="雨水管道清洗-清洗效果触眼可及" />
-                                    <p>雨水管道清洗-清洗效果触眼可及</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/131.html" title="清理污水池-专业服务让您满意">
-                                <img src="Public/Uploads/2017-11-21/5a13a86cb6514.jpg" width="275" height="215" alt="清理污水池-专业服务让您满意" />
-                                <p>清理污水池-专业服务让您满意</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/117.html" title="管道检测-管道CCTV检测">
-                                <img src="Public/Uploads/2017-11-21/5a1395cb01ee8.jpg" width="275" height="215" alt="管道检测-管道CCTV检测" />
-                                <p>管道检测-管道CCTV检测</p>
-                            </a>
-                        </td>
+
+                        <% $products.each do |product| %>
+                            <td>
+                                <%= link_to product.service.name, "/index/product/#{product.id}" do %>
+                                    <%= image_tag product.image_url, width: "275", height: "215", alt:  product.service.name %>
+                                    <p><%= product.service.name%></p>
+                                <% end %>
+                            </td>
+                        <% end %>
                     </tr>
                     </table>
                     </td>
@@ -162,7 +135,8 @@ s.parentNode.insertBefore(hm, s);
       <div class="con2-l">
           <div class="index-t"><p>公司介绍</p><a href="/index/intro">+More</a><div class="clear"></div></div>
             <div class="con2-l-c">
-                    <img src="Public/images/about.png" />
+                    <!-- <img src="Public/images/about.png" /> -->
+                    <%= image_tag $intro.image_url%>
                     <div class="about-r">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <%= $intro.name %>坐落于美丽的太湖之滨—无锡。是经江苏省无锡市工商局、环保局批准的专业从事环保工程；市政管道清洗疏通工程；工业废水、污水化粪池处理工程为一体的大型综合性工程服务公司。<br />
@@ -171,39 +145,39 @@ s.parentNode.insertBefore(hm, s);
             </div>
         </div>
         <div class="con2-ce">
-          <div class="index-t"><p>公司新闻</p><a href="/index/news">+More</a><div class="clear"></div></div>
+          <div class="index-t"><p>新闻中心</p><a href="/index/news">+More</a><div class="clear"></div></div>
             <div class="newstop1">
-                    <img src="Public/Uploads/2018-11-21/5bf50296ea5f0.jpg" />
+                    <%= image_tag $newses.first.try(:image_url)%>
                     <div class="newstop1-r">
-                        <p><a href="/Home/Index/newsd/id/174.html">为何要定期开展无锡环卫所抽粪工作？</a></p>
-                        <span>为了充分展现无锡这座城市良好的市容市貌，政府就要定期开展环卫所抽粪工作，</span>
+                        <p>
+                            <%= link_to $newses.first.try(:name)||"", "/index/news/#{$newses.first.try(:id)}" %>
+                        </p>
+                        <span>
+                            <%= truncate $newses.first.try(:context), length: 50 %>
+                        </span>
                     </div>
                     <div class="clear"></div>
                 </div>            
                 <ul class="indexnewslist">
                     <% $newses.each do |news|%>
                         <li>
-                            <a href="/Home/Index/newsd/id/174.html">为何要定期开展无锡环卫所抽粪工作？</a>
-                            <span>2018-11-21</span>
+                            <%= link_to  news.name, "/index/news/#{news.id}" %>
+                            <span><%= news.created_at.strftime("%Y-%m-%d") %></span>
                         </li>
                     <% end %>
-                 <li><a href="/Home/Index/newsd/id/174.html">为何要定期开展无锡环卫所抽粪工作？</a><span>2018-11-21</span></li>
-                 <li><a href="/Home/Index/newsd/id/169.html">无锡化粪池清理不当可能引发的后果</a><span>2018-10-26</span></li>
-                 <li><a href="/Home/Index/newsd/id/165.html">无锡化粪池清理要按照什么标准收费？</a><span>2018-10-12</span></li>
-                 <li><a href="/Home/Index/newsd/id/163.html">无锡环卫所抽粪的具体操作流程【厂家分享】</a><span>2018-09-29</span></li>
-                 <li><a href="/Home/Index/newsd/id/160.html">无锡老小区化粪池长期不清理会有什么后果</a><span>2018-09-20</span></li>            
                 </ul>
         </div>
         <div class="con2-r">
           <div class="index-t1"><p>联系我们</p></div>
             <div class="con2-c-c">
-               <p>无锡夏斌工程有限公司</p>
-地址：无锡市新吴区净慧东道78号<br />
-电话：0510-85203335<br />
-手机：15052215566<br />
-传真：0510-85203335<br />
-联系人：沈经理<br />
-网址：www.jdlhbgc.com<br/>邮箱：946992252@qq.com            </div>
+               <p><%= $intro.name %></p>
+                地址：<%#= $intro.addr %><br />
+                电话：0510-85203335<br />
+                手机：<%= $intro.tel %><br />
+                联系人：<%= $intro.user %><br />
+                网址：www.jdlhbgc.com<br/>
+                邮箱：946992252@qq.com           
+            </div>
         </div>
         <div class="clear"></div>
     </div>
@@ -236,42 +210,14 @@ s.parentNode.insertBefore(hm, s);
         <div class="con1-r">
           <div class="index-t"><p>服务项目</p><a href="/index/product">+More</a><div class="clear"></div></div>
           <ul class="cp_list">
-                <li>
-                    <a href="/Home/Index/productsd/id/118.html" title="管道检测">
-                    <img src="Public/Uploads/2017-11-21/5a1396bed159b.png" alt="管道检测" />
-                    <p>管道检测</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Home/Index/productsd/id/119.html" title="管道疏通专业技术精湛">
-                        <img src="Public/Uploads/2017-11-21/5a13979d24f49.jpg" alt="管道疏通专业技术精湛" />
-                        <p>管道疏通专业技术精湛</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Home/Index/productsd/id/110.html" title="雨水管道清洗-清洗效果触眼可及">
-                        <img src="Public/Uploads/2017-11-21/5a138def0515d.jpg" alt="雨水管道清洗-清洗效果触眼可及" />
-                        <p>雨水管道清洗-清洗效果触眼可及</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Home/Index/productsd/id/117.html" title="管道检测-管道CCTV检测">
-                        <img src="Public/Uploads/2017-11-21/5a1395cb01ee8.jpg" alt="管道检测-管道CCTV检测" />
-                        <p>管道检测-管道CCTV检测</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Home/Index/productsd/id/120.html" title="管道疏通">
-                        <img src="Public/Uploads/2017-11-21/5a139876b6303.jpg" alt="管道疏通" />
-                        <p>管道疏通</p>
-                    </a>
-                </li>
-                <li>
-                    <a href="/Home/Index/productsd/id/124.html" title="疏通下水道，市政管网疏通">
-                        <img src="Public/Uploads/2017-11-21/5a139a0ae97ea.jpg" alt="疏通下水道，市政管网疏通" />
-                        <p>疏通下水道，市政管网疏通</p>
-                    </a>
-                </li>   
+                <% $products.each do |product| %>
+                    <li>
+                    <%= link_to product.name, "/index/product/#{product.id}", title: product.name do%>
+                        <%= image_tag :product.image_url, alt: product.name%>
+                        <p> <%= product.name  %> </p>
+                    <% end %>
+                    </li>
+                <% end %>
                 <div class="clear"></div>
             </ul>
         </div>
@@ -280,76 +226,26 @@ s.parentNode.insertBefore(hm, s);
   
     <!----case---->
     <div class="case">
-      <div class="index-t"><p>工程案例</p><a href="/Home/Index/products/id/12">+More</a></div>
+      <div class="index-t"><p>工程案例</p><a href="/index/case">+More</a></div>
         <div class="con3-c iborder">
                 <div id="caseo" style="overflow:hidden; height:auto;width:1160px;margin:0 auto; margin:0px auto; ">
                   <table cellpadding="0" cellspace="0" border="0">
                     <tr>
-                    <td id="case1"><table border="0" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td>
-                            <a href="/Home/Index/productsd/id/56.html">
-                                <img src="Public/Uploads/2016-11-02/5819d89139035.jpg" width="275" height="215" />
-                                <p>雨水管道清洗案例</p>
-                            </a>
+                        <td id="case1">
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                <% $cases.each do |ca| %>
+                                    <td>
+                                        <%= link_to ca.name, "/index/case/#{ca.id}", title: ca.name  do%>
+                                            <%= image_tag ca.image_url, width: "275", height: "215" %>
+                                            <p><%= ca.name %></p>
+                                        <% end  %>
+                                    </td>
+                                <% end %>
+                                                  
+                                </tr>
+                            </table>
                         </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/57.html">
-                                <img src="Public/Uploads/2016-11-02/5819d8c3ec692.jpg" width="275" height="215" />
-                                <p>污水管道清理案例</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/58.html">
-                                <img src="Public/Uploads/2016-11-02/5819d8e7c3df5.gif" width="275" height="215" />
-                                <p>管理疏通案例</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/59.html">
-                                <img src="Public/Uploads/2016-11-02/5819d906e289c.gif" width="275" height="215" />
-                                <p>污水管理清理案例</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/60.html">
-                                <img src="Public/Uploads/2016-11-02/5819d9334d5e6.jpg" width="275" height="215" />
-                                <p>工业污水管道清洗</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/61.html">
-                                <img src="Public/Uploads/2016-11-02/5819d9534955d.jpg" width="275" height="215" />
-                                <p>化粪池清理现场</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/62.html">
-                                <img src="Public/Uploads/2016-11-02/5819d97444c9d.jpg" width="275" height="215" />
-                                <p>疏通下水道现场</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/63.html">
-                                <img src="Public/Uploads/2016-11-02/5819d9c13c391.jpg" width="275" height="215" />
-                                <p>高压管道清洗现场</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/64.html">
-                                <img src="Public/Uploads/2016-11-02/5819d9e010475.jpg" width="275" height="215" />
-                                <p>污水管理清理现场</p>
-                            </a>
-                        </td>
-                        <td>
-                            <a href="/Home/Index/productsd/id/65.html">
-                                <img src="Public/Uploads/2016-11-02/5819da139bb5b.jpg" width="275" height="215" />
-                                <p>环卫所抽粪现场</p>
-                            </a>
-                        </td>                    
-                        </tr>
-                    </table>
-                    </td>
                     <td id="case2"></td>
                     </tr>
                   </table>
@@ -375,81 +271,47 @@ s.parentNode.insertBefore(hm, s);
 <div class="clear"></div>
     <!----news---->
     <div class="news">
-        <div class="news-l">
-            <div class="inews-t"><div class="new-t">
-                <a href="#" class="gsxw" style="">公司公告</a>
-                <a href="#" style="" class="hyxw">行业新闻</a>
+            <div class="news-l">
+            <div class="inews-t">
+            <div class="new-t">
+                <%= link_to "新闻中心" , "/index/news", class: "hyxw" %>
             </div>
-            <a href="/Home/Index/news/id/7.html" class="newsmore">+More</a></div>
+            <a href="/index/news" class="newsmore">+More</a>
+            </div>
             <div class="news-c">
                 <div class="gsxwc">
                     <div class="newstop">
-                        <img src="Public/Uploads/2018-11-01/5bdaad922d977.jpg" />
+                        <% if @news.present? %>
+                        <%= image_tag "@news.try(:image_url)" %>
                         <div class="newstop-r">
-                        <p><a href="/Home/Index/newsd/id/171.html">如何解决无锡管道疏通中的漏水问题</a></p>
-                        <span>保护水源，节约用水是需要我们终生奉行的守则，任何浪费用水的行为都要坚决抵</span>
-                        <a href="/Home/Index/newsd/id/171.html" class="more">查看更多</a>
+                            <p>
+                                <%= link_to @news.try(:name)||"", "/index/news/#{@news.try(:id)}" %>
+                            </p>
+                            <span>
+                                <%= truncate @news.try(:context), length: 50%>
+                            </span>
+                                <%= link_to "查看更多", "/index/news/#{@news.try(:id)}", class: "more" %>
                         </div>
                         <div class="clear"></div>
+                        <% end %>
                     </div>                    
                         <ul class="newslist">
                             <li>
                                 <a href="/Home/Index/newsd/id/175.html">厨房下水道堵了该如何疏通？君得利为你排忧！</a>
                                 <span>[2018-11-28]</span>
                             </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/173.html">定期疏通下水道能有效解决管道异味问题</a>
-                                <span>[2018-11-16]</span>
-                            </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/171.html">如何解决无锡管道疏通中的漏水问题</a>
-                                <span>[2018-11-01]</span>
-                            </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/170.html">无锡雨水管道清洗掌握方法很重要</a>
-                                <span>[2018-10-30]</span>
-                            </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/168.html">无锡清理污水池要制定安全作业规程</a>
-                                <span>[2018-10-24]</span>
-                            </li>                    
+                            <% $newses[1,20].each do |news|%>
+                                <li>
+                                    <%= link_to news.name, "/index/news/#{news.id}"    %>
+                                    <span>[<%= news.created_at.strftime("%Y-%m-%d")%>]</span>
+                                </li>
+                            <% end %>
                         </ul>
                 </div>
 
-                <div class="hyxwc" style=" display:none;">
-                     <div class="newstop">
-                        <img src="Public/Uploads/2016-12-15/5851f45d0332d.jpg" />
-                        <div class="newstop-r">
-                        <p><a href="/Home/Index/newsd/id/55.html">清理化粪池的流程和规范</a></p>
-                        <span>化粪池里因各种生活垃圾和粪便污水混合在一起，各种化学物质在空气中进行化学</span>
-                        <a href="/Home/Index/newsd/id/55.html" class="more">查看更多</a>
-                        </div>
-                        <div class="clear"></div>
-                    </div>                    
-                        <ul class="newslist">
-                            <li>
-                                <a href="/Home/Index/newsd/id/60.html">无锡污水管道疏通前的全面检查工作</a>
-                                <span>[2017-01-10]</span>
-                            </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/59.html">化粪池清理工作的注意流程</a>
-                                <span>[2017-01-04]</span>
-                            </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/55.html">清理化粪池的流程和规范</a>
-                                <span>[2016-12-15]</span>
-                            </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/52.html">疏通下水道之防止室内排水管道堵塞</a>
-                                <span>[2016-11-29]</span>
-                            </li>
-                            <li>
-                                <a href="/Home/Index/newsd/id/51.html">为什么要定期清理化粪池呢</a>
-                                <span>[2016-11-25]</span>
-                            </li>                    
-                        </ul>
-                </div>
+               
             </div>
+        </div>
         </div>
         <div class="news-r">
             <div class="cjwt-t"><p>常见问题</p></div>
@@ -468,7 +330,7 @@ s.parentNode.insertBefore(hm, s);
                                                         <%= link_to question.name, "/index/question/#{question.id}" %>
                                                     </p>
                                                     <p class="que2">
-                                                        <%= truncate(question.desc, length = 25, truncate_string = "...")%>
+                                                        <%= truncate(question.desc, length: 25,truncate_string: "...")%>
                                                         <%= link_to [详情], "/index/question/#{question.id}" %>
                                                     </p>
                                                 </li>
@@ -580,9 +442,7 @@ s.parentNode.insertBefore(hm, s);
   <ul>
         <li><a href="/">首页</a></li>
         <li class="nav11"><a href="/Home/Index/products/id/2.html">服务项目</a></li>
-        <li class="nav11"><a href="/Home/Index/info/id/28.html">管道检测</a></li>
         <li class="nav11"><a href="/Home/Index/news/id/7.html">新闻中心</a></li>
-        <li class="nav11"><a href="/Home/Index/products/id/11.html">设备展示</a></li>
         <li class="nav11"><a href="/Home/Index/products/id/12.html">工程案例</a></li>
         <li class="nav11"><a href="/Home/Index/info/id/1.html">公司介绍</a></li>
         <li class="nav11"><a href="/Home/Index/info/id/13.html">联系我们</a></li>            

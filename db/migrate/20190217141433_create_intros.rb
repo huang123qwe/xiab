@@ -6,6 +6,8 @@ class CreateIntros < ActiveRecord::Migration
       t.string :desc
       t.string :user
       t.string :image
+      t.string :addr
+      t.string :email
       t.text    :context
       t.timestamps null: false
     end
