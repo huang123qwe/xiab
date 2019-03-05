@@ -24,7 +24,7 @@
           <td><%= question.name %></td>
           <td><%= question.desc %></td>
           <td class="action-buttons">
-            <%= link_to "详情", admin_questions_path(question), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
+            <%#= link_to "详情", admin_questions_path(question), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
             <%= link_to "置顶", "/admin/question/top?id=#{question.id}", class: "blue fa fa-search-plus" %>
             <%= link_to "删除", [:admin, question], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
           </td>
