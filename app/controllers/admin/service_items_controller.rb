@@ -14,15 +14,27 @@ class Admin::ServiceItemsController <  AdminBaseController
   def create
     @service_item = ServiceItem.new(params_permit)
     @service_item.save
+    $products = nil
+    redirect_to admin_service_items_path
   end
 
-  def destory
+  def destroy
+    service_item = ServiceItem.find_by(params[:id])
+    service_item.delete
+    $products = nil
+    redirect_to admin_service_items_path
+  end
 
+  def top
+    service_item = ServiceItem.find_by(params[:id])
+    service_item.update(updated_at: Time.now)
+    $products = nil
+    redirect_to admin_service_items_path
   end
 
 
   private 
   def params_permit
-    params.require(:service_items).permit(:service_id,  :desc, :context)
+    params.require(:service_item).permit(:service_id,  :desc, :context, :image)
   end
 end

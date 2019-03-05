@@ -1,10 +1,10 @@
 <div class="title">
-    <h2><i class="fa fa-pencil-square-o"></i>添加轮播图</h2>
+    <h2><i class="fa fa-pencil-square-o"></i>添加新闻</h2>
 </div>
 <%= form_for  [:admin, @newse], html: {id:"Forms", role: "form" }  do |f| %>
   <table class="tab2 mt20">
     <tr>
-      <td width="100" class="bold right">图片名称</td>
+      <td width="100" class="bold right">新闻标题</td>
       <td>
         <%= f.text_field :name, class: "texts2 w450 l", required:"on", autofocus:"on", autocomplete:"off", placeholder: "图片名称不能为空" %>
         <span class="notice">*</span>
@@ -14,13 +14,14 @@
     <tr>
       <td class="bold right" valign="top">图片</td>
       <td>
-        <a onClick="ImageUpload('UploadFile1','prizeImgup1')" class="thumbnail pointer" id="prizeImgup1">
-        
-            上传图片
-          
-        </a>
-        <%= f.file_field :image, class: "prizeImgfile none", id: "UploadFile1" %>
-        <span class="notice">*</span>
+        <%= f.file_field :image, class: "prizeImgfile", id: "UploadFile1" %>
+      </td>
+    </tr>
+
+     <tr>
+      <td class="bold right" valign="top">内容</td>
+      <td>
+        <%= f.kindeditor :context %>
       </td>
     </tr>
     <tr>

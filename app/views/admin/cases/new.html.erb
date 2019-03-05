@@ -1,30 +1,29 @@
 <div class="title">
-    <h2><i class="fa fa-pencil-square-o"></i>添加问答</h2>
+    <h2><i class="fa fa-pencil-square-o"></i>添加案例</h2>
 </div>
-<%= form_for [:admin, @question], html: {id:"Forms", role: "form" }  do |f| %>
+<%= form_for  [:admin, @case], html: {id:"Forms", role: "form" }  do |f| %>
   <table class="tab2 mt20">
     <tr>
-      <td width="100" class="bold right">问:</td>
+      <td width="100" class="bold right">标题</td>
       <td>
         <%= f.text_field :name, class: "texts2 w450 l", required:"on", autofocus:"on", autocomplete:"off" %>
         <span class="notice">*</span>
       </td>
     </tr>
-
+  
     <tr>
-      <td width="100" class="bold right">答案简介:</td>
+      <td class="bold right" valign="top">图片</td>
       <td>
-        <%= f.text_area :desc %>
+        <%= f.file_field :image, class: "prizeImgfile", id: "UploadFile1" %>
       </td>
     </tr>
 
-    <tr>
-      <td width="100" class="bold right">答案详情:</td>
+     <tr>
+      <td class="bold right" valign="top">内容</td>
       <td>
         <%= f.kindeditor :context %>
       </td>
     </tr>
-
     <tr>
         <td>&nbsp;</td>
         <td style="padding-top:75px;">
@@ -34,5 +33,4 @@
       </tr>
   </table>
 <% end %>
-
 

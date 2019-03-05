@@ -13,6 +13,14 @@ class Admin::IntrosController < AdminBaseController
   	redirect_to admin_intros_path
   end
 
+  def destroy
+
+  end
+
+  def top
+
+  end
+
   private 
   def intro_params
       params.require(:intro).permit(:name, :image, :tel, :user, :desc, :content)

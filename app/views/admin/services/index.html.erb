@@ -22,7 +22,9 @@
         <tr class="center">
           <td><%= service.name %></td>
           <td >
+            <%= link_to "置顶", "/admin/services/top?id=#{service.id}", class: "blue fa fa-search-plus" %>
             <%= link_to "删除", [:admin, service], method: :delete, data: {confirm: "确定删除?"}, title:"删除" %>
+
           </td>
         </tr>
       <% end %>

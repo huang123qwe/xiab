@@ -9,11 +9,24 @@ class Admin::QuestionsController <  AdminBaseController
   end
 
   def create
-
+    question = Question.new(params_permit)
+    question.save
+    redirect_to admin_questions_path
+    $questions = nil
   end
 
-  def destory
+  def destroy
+    question = Question.find_by(params[:id])
+    question.delete
+    $questions = nil
+    redirect_to admin_questions_path
+  end
 
+  def top
+    question = Question.find_by(params[:id])
+    question.update(updated_at: Time.now)
+    $questions = nil
+    redirect_to admin_questions_path
   end
 
 
@@ -21,6 +34,6 @@ class Admin::QuestionsController <  AdminBaseController
 
   private 
   def params_permit
-    params.require(:question).permit(:name, :image)
+    params.require(:question).permit(:name, :image, :context)
   end
 end

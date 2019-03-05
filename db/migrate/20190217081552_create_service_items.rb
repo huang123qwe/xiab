@@ -5,6 +5,7 @@ class CreateServiceItems < ActiveRecord::Migration
       t.integer :service_id
       t.text :content
       t.string :desc
+      t.string :image
       t.timestamps null: false
     end
   end

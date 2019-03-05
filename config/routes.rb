@@ -45,8 +45,16 @@ Rails.application.routes.draw do
    end
 
 
-  get 'index/:action' => 'index#product'
-
+  get "/index/product" => "index#product"
+  get "/index/product/:id" => "index#product"
+  get "/index/news" => "index#news"
+  get "/index/news/:id" => "index#news"
+  get "/index/case" => "index#case"
+  get "/index/case/:id" => "index#case"
+  get "/index/about" => "index#about"
+  get "/index/intro" => "index#intro"
+  get "/index/question" => "index#question"
+  get "/index/question/:id" => "index#question"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

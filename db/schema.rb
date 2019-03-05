@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20190303124223) do
   create_table "questions", force: :cascade do |t|
     t.string   "name",       limit: 255
     t.string   "desc",       limit: 255
-    t.text     "content",    limit: 65535
+    t.text     "context",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20190303124223) do
     t.integer  "service_id", limit: 4
     t.text     "content",    limit: 65535
     t.string   "desc",       limit: 255
+    t.string   "image",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
   end
