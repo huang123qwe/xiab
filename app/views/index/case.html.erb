@@ -1,1 +1,36 @@
-case.html.erb
+<%= render "left" %>
+<div style="float: left; height: auto; width: 70%; padding-left: 100px; word-wrap:break-word">
+  <!--面包屑-->
+  <div class="crumb">
+    <span style="font-size: 300%; padding-left: 20px;"><%= @case.name %></span>
+    <div style="float: right; padding-top: 30px; padding-right: 20px;">
+      <span>工程案例</span> > <span></span>
+    </div>
+  </div>
+
+  <!--正文-->
+  <div class="context">
+    <!--图片-->
+    <div class="newstop1">
+      <%= image_tag @case.image_url %>
+    </div>
+    <div>
+      <%= @case.context %>
+    </div>
+  </div>
+
+<!--其他问题-->
+  <ul class="i-question">
+      <% @questions.each do |question| %>
+          <li>
+              <p class="que1">
+                  <%= link_to question.name, "/index/question/#{question.id}" %>
+              </p>
+              <p class="que2">
+                  <%= truncate(question.desc, length: 25,truncate_string: "...")%>
+                  <%= link_to "[详情]", "/index/question/#{question.id}" %>
+              </p>
+          </li>
+      <% end %>
+   </ul>
+</div>

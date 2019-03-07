@@ -14,7 +14,6 @@ class IndexController < ApplicationController
   def product
     if params[:id].present?
       @service_item = ServiceItem.find_by_id(params[:id])
-    
     end
     @service_item  ||= ServiceItem.order("updated_at desc").first
     @service_items = ServiceItem.where.not(id: @service_item.id).order("updated_at desc").limit(10)
@@ -33,7 +32,7 @@ class IndexController < ApplicationController
   end
 
   def intro
-    @intro = Intro.first
+    
   end
 
   def case
