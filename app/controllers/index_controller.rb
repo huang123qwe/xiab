@@ -21,9 +21,9 @@ class IndexController < ApplicationController
 
   def news
     if params[:id].present?
-      @news = News.find_by_id(params[:id])
+      @news = Newse.find_by_id(params[:id])
     end
-    @news ||= News.order("updated_at desc").first
+    @news ||= Newse.order("updated_at desc").first
     @newses = $newses.select{|x| x.id != @news.id}
   end
 
@@ -32,7 +32,7 @@ class IndexController < ApplicationController
   end
 
   def intro
-    
+     @service_items = ServiceItem.order("updated_at desc").limit(4)
   end
 
   def case
@@ -48,7 +48,7 @@ class IndexController < ApplicationController
     if params[:id].present?
       question = Question.find_by(params[:id])
     end
-    @question ||= question.order("updated_at desc").first
+    @question ||= Question.order("updated_at desc").first
     @questions = $questions.select{|x| x.id != question.id }
   end
 

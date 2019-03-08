@@ -3,9 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>夏斌的网站_无锡管道疏通清洗_无锡清理污水池_CCTV管道检测_夏斌</title>
+<title><%= $intro.name %>_无锡管道疏通清洗_无锡清理污水池_CCTV管道检测</title>
 <meta name="keywords" content="无锡清理化粪池,无锡化粪池清理,无锡清理污水池,无锡清理隔油池,无锡清理沉淀池,无锡管道疏通,无锡疏通下水道,无锡污水管道清洗,无锡雨水管道清洗,无锡环卫所抽粪,无锡洒水车出租,无锡雨水管道疏通,无锡污水管道疏通,无锡CCTV管道检测,无锡管道检测,无锡声纳管道检测,无锡QV管道检测" />
-<meta name="description" content="无锡清理化粪池,新区污水管道疏通检测选【无锡夏斌服务热线：15052215566】,我公司专业从事滨湖区疏通下水道,梅村清理污水池,惠山区雨水管道清洗疏通,崇安区清理隔油池,江阴清理沉淀池,宜兴环卫所抽粪.以及无锡高压管道清洗疏通,cctv声纳管道检测等业务。" />
+<meta name="description" content="无锡清理化粪池,新区污水管道疏通检测选【服务热线：<%= $intro.tel %>】,我公司专业从事滨湖区疏通下水道,梅村清理污水池,惠山区雨水管道清洗疏通,崇安区清理隔油池,江阴清理沉淀池,宜兴环卫所抽粪.以及无锡高压管道清洗疏通,cctv声纳管道检测等业务。" />
 <%= stylesheet_link_tag 'fro', media: 'all'%>
 <%= javascript_include_tag 'fro'%>
 <script type="text/javascript">(!!navigator.userAgent.match(/Mobile/))||(!!navigator.userAgent.match(/UCBrowser/))?window.location.href='./Mb/Index/':null;</script>
@@ -26,7 +26,7 @@ $(function(){
 
 });
 </script>
-<!-- www.jdlhbgc.com Baidu tongji analytics -->
+
 <script>
 </script>
 </head>
@@ -71,7 +71,7 @@ $(function(){
 
 <div class="main">
   <%= yield%>
-  <div class="clear"></div>
+    <div class="clear"></div>
   </div>
 </div>
 
@@ -102,9 +102,9 @@ $(function(){
     </ul>
     
     <div class="footer-content">
-     Copyright 无锡夏斌工程有限公司 版权所有 电话：0510-85203335 传真：0510-85203335<br />
-    联系人：沈经理 手机：15052215566  地址：无锡市新吴区净慧东道78号 网址：<br />
-    主营服务:
+     Copyright <%= $intro.name %> 版权所有 电话：<%= $intro.tel %><br />
+    联系人：<%= $intro.user  %> 手机：<%= $intro.tel %>  地址：<%= $intro.addr %> <br />
+    主营服务: <%= $services.map{|x| x.name}.join(" ") %>
     <br/>
     备案号：
     <a href="http://www.miitbeian.gov.cn/"rel="nofollow"></a>    

@@ -18,7 +18,7 @@
         <div class="con1-l">
           <div class="con1-l-t">新闻中心</div>
             <ul class="iauth">
-              <% $services.each do |service| %>
+              <% $newses[0,5].each do |service| %>
                   <li>
                       <%=link_to service.name, "", title: service.name %>
                   </li>
@@ -28,7 +28,7 @@
           <div class="clear"></div>
       </div>
 
-        <div class="con1" style="margin-top: 20px;">
+        <div class="con1" style="margin: 20px 0;">
         <div class="con1-l">
           <div class="con1-l-t">联系我们</div>
           <div class="con2-c-c" style="width: auto">

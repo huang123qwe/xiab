@@ -1,7 +1,8 @@
 <%= render "left" %>
 <style type="text/css">
-  .lili{}
+
 </style>
+
 <div style="float: left; height: auto; width: 70%; padding-left: 100px; word-wrap:break-word">
   <!--面包屑-->
   <div class="crumb">
@@ -13,37 +14,37 @@
 
   <!--正文-->
   <div class="context">
-    <h1 style="border-bottom: 1px solid #464646; padding-left: 30px; text-align: center;  ">
+    <h1 style="  ">
       <%= @case.name %>
     </h1>
     <!--图片-->
-    <div style="margin: 10px; ">
-      <%= image_tag @case.image_url, style: "height: 400px; width: 400px" %>
+    <div class="coim">
+      <%= image_tag @case.image_url %>
     </div>
-    <h3 style="border-bottom: 1px solid #464646; font-size: 18px; ">
-      详情介绍
-    </h3>
-    <div>
+    <div class="bbm ">
+      <h3>
+        详情介绍
+      </h3>
+    </div>
+    <div style="min-height: 300px;">
       <%= @case.context %>
     </div>
   </div>
 
-  <div style="margin: 30px 0; border-top: 3px dashed #e0e1dc;">
-    
-  </div>
+ <div class="demo_line_01"><%= $intro.name %></div>
 
 <!--其他问题-->
-<div style="border-bottom: 1px solid #464646; margin: 20px 0;">
-   <h3 style="border-bottom: 2px solid #188FE1; font-size: 18px; width: 100px; ">
-      相关产品：
+<div class="bbm">
+   <h3>
+      其他案例：
    </h3>
  </div> 
 
-  <ul >
+  <ul class="oth">
      <% @cases[0,4].each do |ca| %>
         <li style="float: left; margin: 0 5px; text-align:center;">
           <a>
-            <%= image_tag ca.image_url, style: "height: 170px; width:170px;border: 1px solid;" %>
+            <%= image_tag ca.image_url %>
             <br/>
             <span><%= ca.name %></span>
           </a>

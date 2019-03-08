@@ -4,19 +4,64 @@
   <div class="crumb">
     <span style="font-size: 300%; padding-left: 20px;">公司简介</span>
     <div style="float: right; padding-top: 30px; padding-right: 20px;">
-      <span>公司简介</span> > <span></span>
+      <span>公司简介</span> > <span><%= $intro.name %></span>
     </div>
   </div>
 
   <!--正文-->
   <div class="context">
-    <!--图片-->
-    <div class="newstop1">
+    <h1 >
+      <%= $intro.name %>
+    </h1>
+     <!--图片-->
+    <div class="coim">
       <%= image_tag $intro.image_url %>
+      <br/>
+      <p>
+        <span class="trn">公司法人:</span><span class="trv"> <%= $intro.user %></span>
+      </p>
+      <p>
+        <span class="trn">公司地址:</span><span class="trv"> <%= $intro.addr %></span>
+      </p>
+      <p>
+        <span class="trn">联系电话:</span><span class="trv"> <%= $intro.tel %></span>
+      </p>
+      <p>
+        <span class="trn">email:</span><span class="trv"> <%= $intro.email %></span>
+      </p>
     </div>
-    <div>
+    <div class="bbm ">
+      <h3>
+        详情介绍
+      </h3>
+    </div>
+    <div style="min-height: 300px;">
       <%= $intro.context %>
     </div>
+
+
   </div>
 
+  <!--分隔符-->
+  <div class="demo_line_01"><%= $intro.name %></div>
+
+  <!--其他问题-->
+  <div class="bbm">
+     <h3>
+        服务项目：
+     </h3>
+   </div> 
+
+    <ul class="oth">
+       <% @service_items[0,4].each do |service_item| %>
+          <li style="float: left; margin: 0 5px; text-align:center;">
+            <%= link_to "/index/product/#{service_item.id}" do  %>
+              <%= image_tag service_item.image_url %>
+              <br/>
+              <span><%= service_item.name %></span>
+            <% end %>
+          </li>
+       <% end %>
+    </ul>
+  </div>
 </div>

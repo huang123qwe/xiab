@@ -4,33 +4,48 @@
   <div class="crumb">
     <span style="font-size: 300%; padding-left: 20px;"><%= @service_item.name %></span>
     <div style="float: right; padding-top: 30px; padding-right: 20px;">
-      <span>服务项目</span> > <span> @service_item.service.try(:name)</span>
+      <span>服务项目</span> > <span><%= @service_item.service.try(:name) %></span>
     </div>
   </div>
 
   <!--正文-->
   <div class="context">
+    <h1 >
+      <%= @service_item.service.try(:name) %>
+    </h1>
     <!--图片-->
-    <div class="newstop1">
+    <div class="coim">
       <%= image_tag @service_item.image_url %>
     </div>
-    <div>
-      <%= service_item.context %>
+    <div class="bbm ">
+      <h3>
+        详情介绍
+      </h3>
+    </div>
+    <div style="min-height: 300px;">
+      <%= @service_item.content %>
     </div>
   </div>
 
+  <!--分隔符-->
+  <div class="demo_line_01"><%= $intro.name %></div>
+
 <!--其他问题-->
-  <ul class="i-question">
-      <% @questions.each do |question| %>
-          <li>
-              <p class="que1">
-                  <%= link_to question.name, "/index/question/#{question.id}" %>
-              </p>
-              <p class="que2">
-                  <%= truncate(question.desc, length: 25,truncate_string: "...")%>
-                  <%= link_to "[详情]", "/index/question/#{question.id}" %>
-              </p>
-          </li>
-      <% end %>
+<div class="bbm">
+   <h3>
+      其他项目：
+   </h3>
+ </div> 
+
+  <ul class="oth">
+     <% @service_items[0,4].each do |service_item| %>
+        <li style="float: left; margin: 0 5px; text-align:center;">
+          <%= link_to "/index/product/#{service_item.id}" do  %>
+            <%= image_tag service_item.image_url %>
+            <br/>
+            <span><%= service_item.name %></span>
+          <% end %>
+        </li>
+     <% end %>
    </ul>
 </div>
