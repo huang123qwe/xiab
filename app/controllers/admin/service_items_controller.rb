@@ -11,8 +11,19 @@ class Admin::ServiceItemsController <  AdminBaseController
     @service_item = ServiceItem.find_by_id(params[:id])
   end
 
+  def edit
+    @service_item = ServiceItem.find_by_id(params[:id])
+  end
+
+  def update
+    @service_item = ServiceItem.find_by_id(params[:id])
+    @service_item.update(service_item_permit)
+    $products = nil
+    redirect_to admin_service_items_path
+  end
+
   def create
-    @service_item = ServiceItem.new(params_permit)
+    @service_item = ServiceItem.new(service_item_permit)
     @service_item.save
     $products = nil
     redirect_to admin_service_items_path
@@ -34,7 +45,7 @@ class Admin::ServiceItemsController <  AdminBaseController
 
 
   private 
-  def params_permit
-    params.require(:service_item).permit(:service_id,  :desc, :context, :image)
+  def service_item_permit
+    params.require(:service_item).permit(:service_id,  :desc, :content, :image, :name)
   end
 end

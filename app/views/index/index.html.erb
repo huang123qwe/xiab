@@ -72,7 +72,7 @@
         <div class="con2-ce">
           <div class="index-t"><p>新闻中心</p><a href="/index/news">+More</a><div class="clear"></div></div>
             <div class="newstop1">
-                    <%= image_tag $newses.first.try(:image_url) %>
+                   
                     <div class="newstop1-r">
                         <p>
                             <%= link_to $newses.first.try(:name)||"", "/index/news/#{$newses.first.try(:id)}" %>
@@ -84,7 +84,7 @@
                     <div class="clear"></div>
                 </div>            
                 <ul class="indexnewslist">
-                    <% $newses.each do |news|%>
+                    <% $newses[1,5].to_a.each do |news|%>
                         <li>
                             <%= link_to  news.name, "/index/news/#{news.id}" %>
                             <span><%= news.created_at.strftime("%Y-%m-%d") %></span>
@@ -194,7 +194,7 @@
                 <div class="gsxwc">
                     <div class="newstop">
                         <% if @news.present? %>
-                        <%= image_tag "@news.try(:image_url)" %>
+                        
                         <div class="newstop-r">
                             <p>
                                 <%= link_to @news.try(:name)||"", "/index/news/#{@news.try(:id)}" %>
@@ -208,7 +208,7 @@
                         <% end %>
                     </div>                    
                         <ul class="newslist">
-                            <% $newses[1,20].to_a.each do |news|%>
+                            <% $newses[1,10].to_a.each do |news|%>
                                 <li>
                                     <%= link_to news.name, "/index/news/#{news.id}"    %>
                                     <span>[<%= news.created_at.strftime("%Y-%m-%d")%>]</span>
