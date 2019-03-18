@@ -25,12 +25,13 @@
           <td><%= newse.name %></td>
           <td><%= truncate newse.try(:context), length: 50 %></td>
           <td class="action-buttons">
-            <%#= link_to "详情", admin_newses_path(newse), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
-            <%= link_to "置顶", "/admin/newse/top?id=#{newse.id}", class: "blue fa fa-search-plus" %>
-            <%= link_to "删除", [:admin, newse], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
+            <%= link_to "修改", edit_admin_newse_path(newse), class: "blue" %>
+            <%= link_to "置顶", "/admin/newse/top?id=#{newse.id}", class: "blue" %>
+            <%= link_to "删除", [:admin, newse], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red" %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+  <%= paginate @newses %>
 </div>

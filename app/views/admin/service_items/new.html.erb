@@ -7,15 +7,12 @@
       <td width="100" class="bold right">标题</td>
       <td>
         <%= f.text_field :name %>
-        
-        <span class="notice">*</span>
       </td>
     </tr>
     <tr>
       <td width="100" class="bold right">所属项目</td>
       <td>
         <%= f.select :service_id, options_for_select(Service.all.map{|x| [x.name, x.id]}), {}, class: "" %>
-        <span class="notice">*</span>
       </td>
     </tr>
 
@@ -23,16 +20,13 @@
       <td width="100" class="bold right">图片</td>
       <td>
         <%= f.file_field :image %>
-        <span class="notice">*</span>
       </td>
     </tr>
 
     <tr>
       <td width="100" class="bold right">简答描述</td>
       <td>
-        <%= f.text_area :desc %>
-
-        <span class="notice">*</span>
+        <%= f.text_area :desc, rows: 4 cols: 100 %>
       </td>
     </tr>
 

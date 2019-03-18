@@ -1,6 +1,6 @@
 class Admin::NewsesController <  AdminBaseController
   def index
-    @newses = Newse.order("updated_at desc")
+    @newses = Newse.order("updated_at desc").page(params[:page])
   end
 
   def new 
@@ -28,8 +28,19 @@ class Admin::NewsesController <  AdminBaseController
     redirect_to admin_newses_path
   end
 
+  def edit
+     @newse = Newse.find_by(params[:id])
+  end
+
+  def update
+    newse = Newse.find_by(params[:id])
+    newse.update(params_permit)
+    $newses = nil
+    redirect_to admin_newses_path
+  end
+
   private 
   def params_permit
-    params.require(:newse).permit(:name, :image, :context)
+    params.require(:newse).permit(:name, :image, :context, :desc)
   end
 end

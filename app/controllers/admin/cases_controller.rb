@@ -1,7 +1,7 @@
 class Admin::CasesController < AdminBaseController
 
   def index
-    @cases = Case.order("updated_at desc")
+    @cases = Case.order("updated_at desc").page(params[:page])
   end
 
   def new
@@ -25,6 +25,17 @@ class Admin::CasesController < AdminBaseController
   def top
     ca = Case.find_by(params[:id])
     ca.update(updated_at: Time.now)
+    $cases = nil
+    redirect_to admin_cases_path
+  end
+
+  def edit
+    @case = Case.find_by(params[:id])
+  end
+
+  def update
+    ca = Case.find_by(params[:id])
+    ca.update(case_params)
     $cases = nil
     redirect_to admin_cases_path
   end

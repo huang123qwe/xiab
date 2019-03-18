@@ -4,7 +4,7 @@
     <div class="titlebox">
     <!--   <%= text_field_tag :name, params[:name], class: "texts w300 mt10", placeholder: '输入商家名称' %>
       <button class="btn1 mlr8" type="submit"><i class="glyphicon glyphicon-search"></i>搜索</button> -->
-      <a class="btn2" href="/admin/advts/new"><i class="fa fa-plus"></i>添加图片</a>
+      <a class="btn2" href="/admin/advts/new"><i class=""></i>添加图片</a>
     </div>
   <% end %> 
 </div>
@@ -26,8 +26,8 @@
           <td><%= advt.name %></td>
           <td><%=image_tag advt.image_url, class: "w200 h200"%></td>
           <td class="action-buttons">
-            <%= link_to "置顶", "/admin/advts/top?id=#{advt.id}", class: "blue fa fa-search-plus" %>
-            <%= link_to "删除", [:admin, advt], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red fa fa-trash-o" %>
+            <%= link_to "置顶", "/admin/advts/top?id=#{advt.id}", class: "blue" %>
+            <%= link_to "删除", [:admin, advt], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red" %>
           </td>
         </tr>
       <% end %>

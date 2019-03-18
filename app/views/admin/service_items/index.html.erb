@@ -22,7 +22,6 @@
           <td><%= Service.find_by_id(service_item.service_id).try(:name) %></td>
           <td><%= service_item.desc %></td>
           <td class="action-buttons">
-            <%#= link_to "详情", admin_service_item_path(service_item), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
             <%= link_to "修改", edit_admin_service_item_path(service_item), class: "blue " %>
             <%= link_to "置顶", "/admin/service_items/top?id=#{service_item.id}", class: "blue " %>
             <%= link_to "删除", [:admin, service_item], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red  " %>
@@ -31,4 +30,5 @@
       <% end %>
     </tbody>
   </table>
+  <%= paginate @service_items %>
 </div>

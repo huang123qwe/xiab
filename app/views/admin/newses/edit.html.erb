@@ -1,5 +1,5 @@
 <div class="title">
-    <h2><i class="fa fa-pencil-square-o"></i>添加新闻</h2>
+    <h2><i class="fa fa-pencil-square-o"></i>修改新闻</h2>
 </div>
 <%= form_for  [:admin, @newse], html: {id:"Forms", role: "form" }  do |f| %>
   <table class="tab2 mt20">
@@ -9,7 +9,6 @@
         <%= f.text_field :name, class: "texts2 w450 l", required:"on", autofocus:"on", autocomplete:"off", placeholder: "图片名称不能为空" %>
       </td>
     </tr>
-  
     <tr>
       <td width="100" class="bold right">新闻简介</td>
       <td>
@@ -32,4 +31,3 @@
       </tr>
   </table>
 <% end %>
-

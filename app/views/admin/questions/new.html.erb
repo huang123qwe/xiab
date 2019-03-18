@@ -7,14 +7,13 @@
       <td width="100" class="bold right">问:</td>
       <td>
         <%= f.text_field :name, class: "texts2 w450 l", required:"on", autofocus:"on", autocomplete:"off" %>
-        <span class="notice">*</span>
       </td>
     </tr>
 
     <tr>
       <td width="100" class="bold right">答案简介:</td>
       <td>
-        <%= f.text_area :desc %>
+        <%= f.text_area :desc, rows: 4 cols: 100 %>
       </td>
     </tr>
 
@@ -28,8 +27,8 @@
     <tr>
         <td>&nbsp;</td>
         <td style="padding-top:75px;">
-          <button class="btn3 mr20" type="submit"><i class="fa fa-check"></i>完成</button>
-          <button onclick="history.go(-1)" class="btn4" type="button"><i class="fa fa-undo"></i>返回</button>
+          <button class="btn3 mr20" type="submit"><i class=""></i>完成</button>
+          <button onclick="history.go(-1)" class="btn4" type="button"><i class=""></i>返回</button>
         </td>
       </tr>
   </table>
