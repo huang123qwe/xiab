@@ -61,7 +61,7 @@
           <div class="index-t"><p>公司介绍</p><a href="/index/intro">+More</a><div class="clear"></div></div>
             <div class="con2-l-c">
                     <!-- <img src="Public/images/about.png" /> -->
-                    <%= image_tag $intro.image_url%>
+                    <%#= image_tag $intro.image_url%>
                     <div class="about-r">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         <%= $intro.name %>坐落于美丽的太湖之滨—无锡。是经江苏省无锡市工商局、环保局批准的专业从事环保工程；市政管道清洗疏通工程；工业废水、污水化粪池处理工程为一体的大型综合性工程服务公司。<br />
@@ -78,7 +78,7 @@
                             <%= link_to $newses.first.try(:name)||"", "/index/news/#{$newses.first.try(:id)}" %>
                         </p>
                         <span>
-                            <%= truncate $newses.first.try(:desc), length: 50 %>
+                            <%= truncate($newses.first.try(:desc), length: 50) %>
                         </span>
                     </div>
                     <div class="clear"></div>

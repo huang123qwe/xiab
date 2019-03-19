@@ -9,31 +9,31 @@
 <body>
 <main>
   <header>
-    <a class="logo"><i class="fa fa-leaf pr10 f18"></i>后台管理</a>
-    <a href="/admin/sign_out" class="close"><i class="fa fa-power-off pr10"></i>退出</a>
+    <a class="logo"><i class=" pr10 f18"></i>后台管理</a>
+    <a href="/admin/sign_out" class="close"><i class=" pr10"></i>退出</a>
   </header>
   <nav class="sidebar">
     <ul>
         <li class="<%= 'active' if controller_name == 'intros' %>">
-          <%= link_to "公司介绍", admin_intros_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "公司介绍", admin_intros_path %><i class=" arrow"></i>
         </li>
          <li class="<%= 'active' if controller_name == 'services' %>">
-          <%= link_to "服务项目", admin_services_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "服务项目", admin_services_path %><i class=" arrow"></i>
         </li>
         <li class="<%= 'active' if controller_name == 'service_items' %>">
-          <%= link_to "服务项目内容", admin_service_items_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "服务项目内容", admin_service_items_path %><i class=" arrow"></i>
         </li>
         <li class="<%= 'active' if controller_name == 'advts' %>">
-          <%= link_to "广告图", admin_advts_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "广告图", admin_advts_path %><i class=" arrow"></i>
         </li>
         <li class="<%= 'active' if controller_name == 'newes' %>">
-          <%= link_to "行业新闻", admin_newses_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "新闻中心", admin_newses_path %><i class=" arrow"></i>
         </li>
          <li class="<%= 'active' if controller_name == 'questions' %>">
-          <%= link_to "常见问题", admin_questions_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "常见问题", admin_questions_path %><i class="fa  arrow"></i>
         </li>
         <li class="<%= 'active' if controller_name == 'cases' %>">
-          <%= link_to "工程案例", admin_cases_path %><i class="fa fa-angle-right arrow"></i>
+          <%= link_to "工程案例", admin_cases_path %><i class="fa arrow"></i>
         </li>
        
     </ul>

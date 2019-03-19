@@ -1,10 +1,10 @@
 <div class="title">
    <%= form_tag admin_advts_path, method: :get do %>
-    <h2><i class="fa fa-pencil-square-o"></i>题目管理</h2>
+    <h2><i class="fa "></i>题目管理</h2>
     <div class="titlebox">
     <!--   <%= text_field_tag :name, params[:name], class: "texts w300 mt10", placeholder: '输入商家名称' %>
       <button class="btn1 mlr8" type="submit"><i class="glyphicon glyphicon-search"></i>搜索</button> -->
-      <a class="btn2" href="/admin/newses/new"><i class="fa fa-plus"></i>添加新闻</a>
+      <a class="btn2" href="/admin/newses/new"><i class="fa "></i>添加新闻</a>
     </div>
   <% end %> 
 </div>
@@ -23,7 +23,7 @@
       <% @newses.each do |newse| %>
         <tr class="center">
           <td><%= newse.name %></td>
-          <td><%= truncate newse.try(:context), length: 50 %></td>
+          <td><%= truncate newse.try(:desc), length: 50 %></td>
           <td class="action-buttons">
             <%= link_to "修改", edit_admin_newse_path(newse), class: "blue" %>
             <%= link_to "置顶", "/admin/newse/top?id=#{newse.id}", class: "blue" %>

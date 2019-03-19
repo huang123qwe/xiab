@@ -63,9 +63,9 @@ ActiveRecord::Schema.define(version: 20190316140811) do
     t.integer  "service_id", limit: 4
     t.text     "content",    limit: 65535
     t.string   "desc",       limit: 255
+    t.string   "image",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.string   "image",      limit: 255
   end
 
   create_table "services", force: :cascade do |t|

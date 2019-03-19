@@ -160,7 +160,7 @@ a.nivo-prevNav {left:400px;}
 /*第一部分样式*/
 .con1{ width:100%; height:auto;}
 .con1-l{ width:260px; height:auto; float:left;}
-.con1-l-t{ width:260px; height:70px; line-height:70px;  background-color:#0173B9; color:#fff; font-size:20px; text-indent:20px;}
+.con1-l-t{ width:260px; height:50px; line-height:50px;  background-color:#0173B9; color:#fff; font-size:20px; text-indent:20px;}
 .con1-r{ width:890px; height:auto; float:right;}
 .con1-l-bot{ width:238px; height:auto;background-color:#124185; color:#fff; border-left:1px solid #000;  border-right:1px solid #000;  border-bottom:1px solid #000; padding-top:30px;}
 .con1font1{ font-size:14px; padding-left:30px;}
