@@ -10,6 +10,7 @@ class Admin::IntrosController < AdminBaseController
   def update
   	intro = Intro.find_by(params[:id])
   	intro.update(intro_params)
+$intro = nil
   	redirect_to admin_intros_path
   end
 

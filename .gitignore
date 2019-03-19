@@ -17,3 +17,8 @@ database.yml
 /tmp
 /public/uploads
 db/schema.rb
+/public/assets
+start.sh
+restart.sh
+stop.sh
+/config/puma.rb
