@@ -73,12 +73,12 @@
           <div class="index-t"><p>新闻中心</p><a href="/index/news">+More</a><div class="clear"></div></div>
             <div class="newstop1">
                    
-                    <div class="newstop1-r">
+                    <div class="newstop1-r" style="width: 410px;">
                         <p>
-                            <%= link_to $newses.first.try(:name)||"", "/index/news/#{$newses.first.try(:id)}" %>
+                            <%= link_to truncate($newses.first.try(:name)||"", length: 25), "/index/news/#{$newses.first.try(:id)}" %>
                         </p>
                         <span>
-                            <%= truncate($newses.first.try(:desc), length: 50) %>
+                            <%= truncate($newses.first.try(:desc), length: 40) %>
                         </span>
                     </div>
                     <div class="clear"></div>
@@ -86,7 +86,7 @@
                 <ul class="indexnewslist">
                     <% $newses[1,5].to_a.each do |news|%>
                         <li>
-                            <%= link_to  news.name, "/index/news/#{news.id}" %>
+                            <%= link_to truncate( news.name, length: 20), "/index/news/#{news.id}" %>
                             <span><%= news.created_at.strftime("%Y-%m-%d") %></span>
                         </li>
                     <% end %>
@@ -194,12 +194,12 @@
                     <div class="newstop">
                         <% if @news.present? %>
                         
-                        <div class="newstop-r">
+                        <div class="newstop-r" style="width: 600px;">
                             <p>
                                 <%= link_to @news.try(:name)||"", "/index/news/#{@news.try(:id)}" %>
                             </p>
                             <span>
-                                <%= truncate @news.try(:desc), length: 50%>
+                                <%= truncate @news.try(:desc), length: 90%>
                             </span>
                                 <%= link_to "查看更多", "/index/news/#{@news.try(:id)}", class: "more" %>
                         </div>
