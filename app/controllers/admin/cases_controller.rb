@@ -16,25 +16,25 @@ class Admin::CasesController < AdminBaseController
   end
 
   def destroy
-    ca = Case.find_by(params[:id])
+    ca = Case.find_by_id(params[:id])
     ca.delete
     $cases = nil
     redirect_to admin_cases_path
   end
 
   def top
-    ca = Case.find_by(params[:id])
+    ca = Case.find_by_id(params[:id])
     ca.update(updated_at: Time.now)
     $cases = nil
     redirect_to admin_cases_path
   end
 
   def edit
-    @case = Case.find_by(params[:id])
+    @case = Case.find_by_id(params[:id])
   end
 
   def update
-    ca = Case.find_by(params[:id])
+    ca = Case.find_by_id(params[:id])
     ca.update(case_params)
     $cases = nil
     redirect_to admin_cases_path

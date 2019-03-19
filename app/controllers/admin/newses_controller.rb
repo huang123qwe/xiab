@@ -15,25 +15,25 @@ class Admin::NewsesController <  AdminBaseController
   end
 
   def destroy
-    newse = Newse.find_by(params[:id])
+    newse = Newse.find_by_id(params[:id])
     newses.delete
     $newses = nil
     redirect_to admin_newses_path
   end
 
   def top
-    newse = Newse.find_by(params[:id])
+    newse = Newse.find_by_id(params[:id])
     newse.updated_at(updated_at: Time.now)
     $newses = nil
     redirect_to admin_newses_path
   end
 
   def edit
-     @newse = Newse.find_by(params[:id])
+     @newse = Newse.find_by_id(params[:id])
   end
 
   def update
-    newse = Newse.find_by(params[:id])
+    newse = Newse.find_by_id(params[:id])
     newse.update(params_permit)
     $newses = nil
     redirect_to admin_newses_path

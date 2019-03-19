@@ -6,7 +6,7 @@
         <div class="con1-l-t">联系我们</div>
         <div class="con2-c-c" style="width: auto; font-size: 13px; height: 190px;">
           <p style="font-size: 17px; margin: 5px 0;"><%= $intro.name %></p>
-              地址：<%#= $intro.addr %><br />
+              地址：<%= $intro.addr %><br />
               电话：<%= $intro.tel %><br />
               手机：<%= $intro.tel %><br />
               联系人：<%= $intro.user %><br />
@@ -37,7 +37,7 @@
             <ul class="iauth">
               <% $newses[0,5].each do |service| %>
                   <li>
-                      <%=link_to service.name, "", title: service.name %>
+                      <%=link_to truncate(service.name,length: 14), "/index/news/#{service.id}", title: service.name %>
                   </li>
               <% end %>
             </ul>

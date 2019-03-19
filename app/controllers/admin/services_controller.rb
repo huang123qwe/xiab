@@ -15,13 +15,13 @@ class Admin::ServicesController <  AdminBaseController
 
 
   def destroy
-    Service.find_by(params[:id]).delete
+    Service.find_by_id(params[:id]).delete
     $services = nil
     redirect_to admin_services_path
   end
 
   def top
-    service = Service.find_by(params[:id])
+    service = Service.find_by_id(params[:id])
     service.update(updated_at: Time.now)
     $services = nil
     redirect_to admin_services_path

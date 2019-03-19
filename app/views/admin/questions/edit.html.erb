@@ -1,5 +1,5 @@
 <div class="title">
-    <h2><i class="fa fa-pencil-square-o"></i>修改问答</h2>
+    <h2><i class="fa "></i>修改问答</h2>
 </div>
 <%= form_for [:admin, @question], html: {id:"Forms", role: "form" }  do |f| %>
   <table class="tab2 mt20">
@@ -13,7 +13,7 @@
     <tr>
       <td width="100" class="bold right">答案简介:</td>
       <td>
-        <%= f.text_area :desc, rows: 4 cols: 100 %>
+        <%= f.text_area :desc, rows: 4, cols: 100 %>
       </td>
     </tr>
 

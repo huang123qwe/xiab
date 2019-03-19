@@ -1,5 +1,6 @@
 class IndexController < ApplicationController
   layout "fro"
+  
 	def index
     $intro ||= Intro.last
     $services ||= Service.order("updated_at desc")
@@ -46,7 +47,7 @@ class IndexController < ApplicationController
 
   def question
     if params[:id].present?
-      question = Question.find_by(params[:id])
+      question = Question.find_by_id(params[:id])
     end
     @question ||= Question.order("updated_at desc").first
     @questions = $questions.select{|x| x.id != question.id }

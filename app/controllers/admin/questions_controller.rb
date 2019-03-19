@@ -16,25 +16,25 @@ class Admin::QuestionsController <  AdminBaseController
   end
 
   def destroy
-    question = Question.find_by(params[:id])
+    question = Question.find_by_id(params[:id])
     question.delete
     $questions = nil
     redirect_to admin_questions_path
   end
 
   def edit
-    @question = Question.find_by(params[:id])
+    @question = Question.find_by_id(params[:id])
   end
 
   def update
-    @question = Question.find_by(params[:id])
+    @question = Question.find_by_id(params[:id])
     @question.update(params_permit)
     $questions = nil
     redirect_to admin_questions_path
   end
 
   def top
-    question = Question.find_by(params[:id])
+    question = Question.find_by_id(params[:id])
     question.update(updated_at: Time.now)
     $questions = nil
     redirect_to admin_questions_path

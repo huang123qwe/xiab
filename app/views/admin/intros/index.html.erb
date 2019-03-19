@@ -10,15 +10,16 @@
     </tr>
     <tr>
       <td>
-        公司图片<%= f.file_field :image, class: "texts2  ml20" %>
-        <%=image_tag @intro.image_url, class: "h100 w100"%>
+        公司地址<%= f.text_field :addr, class: "texts2  ml20 w465"%>
       </td>
     </tr>
+
     <tr>
       <td>
-        公司电话<%= f.text_field :desc, class: "texts2  ml20" %>
+        公司电话<%= f.text_field :tel, class: "texts2  ml20" %>
       </td>
     </tr>
+
     <tr>
       <td>
         公司法人<%= f.text_field :user, class: "texts2  ml20" %>
@@ -26,7 +27,7 @@
     </tr>
     <tr>
       <td>
-        公司简介<%= f.text_area :desc, class: "texts2  ml20" %>
+        公司简介<%= f.text_area :desc,  rows: 5, cols: 100 %>
       </td>
     </tr>
     <tr>

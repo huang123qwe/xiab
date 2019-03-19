@@ -188,7 +188,7 @@ margin: 0 20px;
 height: 41px;
 line-height: 48px;
 }
-.iauth li a{font-size:14px; padding-left:50px; color:#0173B9;}
+.iauth li a{font-size:14px; padding-left:10px; color:#0173B9;}
 .iauth li a:hover{ color:#124185;}
 /* 首页产品列表 */
 .cp_list{ width:100%;}
@@ -301,14 +301,8 @@ line-height: 48px;
 .nypro-list li p a{color:#333;}
 .nypro-list li p a:hover{color:#06C; text-decoration:none;}
 
-/*分页*/
-.fenye{ width:100%; margin:0 auto; line-height:35px; height:35px; padding-top:15px; text-align:center;}
-.fenye .current{ padding: 3px 8px; color:#188FE1; font-weight:bold;}
-.fenye a{ color:#333; border:1px solid #dedede; padding: 3px 8px;}
-.fenye a:hover{background-color:#188FE1;color:#fff; text-decoration:none;}
-
-.context{min-height: 500px; margin: 10px auto;}
-.context h1 {border-bottom: 1px solid #464646; padding-left: 30px; text-align: center;}
+.context{min-height: 500px; margin: 20px auto;}
+.context h1 {border-bottom: 1px solid #464646; padding-left: 30px; text-align: center; font-size: 22px;}
 .bbm {border-bottom: 1px solid #464646; margin: 20px 0;}
 .bbm h3 {border-bottom: 2px solid #188FE1; font-size: 18px; width: 100px;}
 .crumb{border-bottom: 5px solid #1963aa; height: 50px; padding-bottom: 2px;}

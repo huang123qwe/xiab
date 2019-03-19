@@ -4,13 +4,13 @@ class Admin::IntrosController < AdminBaseController
   end
 
   def edit
-      @intro = Intro.find_by(1) 
+      @intro = Intro.find_by_id(1) 
   end
 
   def update
-  	intro = Intro.find_by(params[:id])
+  	intro = Intro.find_by_id(params[:id])
   	intro.update(intro_params)
-$intro = nil
+    $intro = nil
   	redirect_to admin_intros_path
   end
 
@@ -24,6 +24,6 @@ $intro = nil
 
   private 
   def intro_params
-      params.require(:intro).permit(:name, :image, :tel, :user, :desc, :content)
+      params.require(:intro).permit(:name, :image, :tel, :user, :desc, :context, :addr)
   end
 end

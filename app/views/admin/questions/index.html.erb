@@ -4,7 +4,7 @@
     <div class="titlebox">
     <!--   <%= text_field_tag :name, params[:name], class: "texts w300 mt10", placeholder: '输入商家名称' %>
       <button class="btn1 mlr8" type="submit"><i class="glyphicon glyphicon-search"></i>搜索</button> -->
-      <a class="btn2" href="/admin/questions/new"><i class="fa "></i>添加案例</a>
+      <a class="btn2" href="/admin/questions/new"><i class="fa "></i>添加问答</a>
     </div>
   <% end %> 
 </div>
@@ -25,7 +25,7 @@
           <td><%= question.desc %></td>
           <td class="action-buttons">
             <%#= link_to "详情", admin_questions_path(question), class: "blue fa fa-search-plus", title: "预览", target:"_blank" %>
-            <%= link_to "置顶", "/admin/question/top?id=#{question.id}", class: "blue" %>
+            <%= link_to "置顶", "/admin/questions/top?id=#{question.id}", class: "blue" %>
             <%= link_to "删除", [:admin, question], method: :delete, data: {confirm: "确定删除?"}, title:"删除", class:"red" %>
           </td>
         </tr>

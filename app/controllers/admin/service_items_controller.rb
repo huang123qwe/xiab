@@ -30,14 +30,14 @@ class Admin::ServiceItemsController <  AdminBaseController
   end
 
   def destroy
-    service_item = ServiceItem.find_by(params[:id])
+    service_item = ServiceItem.find_by_id(params[:id])
     service_item.delete
     $products = nil
     redirect_to admin_service_items_path
   end
 
   def top
-    service_item = ServiceItem.find_by(params[:id])
+    service_item = ServiceItem.find_by_id(params[:id])
     service_item.update(updated_at: Time.now)
     $products = nil
     redirect_to admin_service_items_path
