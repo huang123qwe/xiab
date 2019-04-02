@@ -44,7 +44,6 @@ Rails.application.routes.draw do
     end
    end
 
-
   get "/index/product" => "index#product"
   get "/index/product/:id" => "index#product"
   get "/index/news" => "index#news"
