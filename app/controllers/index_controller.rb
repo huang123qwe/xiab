@@ -1,15 +1,10 @@
 class IndexController < ApplicationController
   layout "fro"
+
+  before_action :init
   
 	def index
-    $intro ||= Intro.last
-    $services ||= Service.order("updated_at desc")
-    $questions ||= Question.order("updated_at desc").limit(8)
-    $advts ||= Advt.order("updated_at desc").limit(3)
-    $newses ||= Newse.order("updated_at desc").limit(10)
     @news = $newses.first
-    $cases  ||= Case.order("updated_at desc").limit(10)
-    $products ||= $services.map{|service| ServiceItem.where(service_id: service.id).order("updated_at desc").limit(1).first}.select{|si| si.present?}
 	end
 
   def product
@@ -51,6 +46,17 @@ class IndexController < ApplicationController
     end
     @question ||= Question.order("updated_at desc").first
     @questions = $questions.select{|x| x.id != question.id }
+  end
+
+
+  def init 
+    $intro ||= Intro.last
+    $services ||= Service.order("updated_at desc")
+    $questions ||= Question.order("updated_at desc").limit(8)
+    $advts ||= Advt.order("updated_at desc").limit(3)
+    $newses ||= Newse.order("updated_at desc").limit(10)
+    $cases  ||= Case.order("updated_at desc").limit(10)
+    $products ||= $services.map{|service| ServiceItem.where(service_id: service.id).order("updated_at desc").limit(1).first}.select{|si| si.present?}
   end
 
   

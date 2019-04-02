@@ -1,0 +1,119 @@
+Searching 7336 files for "/Mb/Index"
+
+/Users/huangchaoxing/workspace/xiab/app/views/layouts/fro.html.erb:
+    9  <%= stylesheet_link_tag 'fro', media: 'all'%>
+   10  <%= javascript_include_tag 'fro'%>
+   11: <script type="text/javascript">(!!navigator.userAgent.match(/Mobile/))||(!!navigator.userAgent.match(/UCBrowser/))?window.location.href='./Mb/Index/':null;</script>
+   12  <script type="text/javascript">
+   13  $(function() {
+
+/Users/huangchaoxing/workspace/xiab/log/development.log:
+    <binary>
+
+2 matches across 2 files
+
+
+Searching 7338 files for "intro.tel"
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/_left.html.erb:
+    8            <p style="font-size: 17px; margin: 5px 0;"><%= $intro.name %></p>
+    9                地址：<%= $intro.addr %><br />
+   10:               电话：0510-81151545<br />
+   11:               手机：<%= $intro.tel %><br />
+   12                联系人：<%= $intro.user %><br />
+   13                网址：www.wxhjj.com<br/>
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/about.html.erb:
+   23        </p>
+   24        <p>
+   25:         <span class="trn">联系电话:</span><span class="trv"> <%= $intro.tel %></span>
+   26        </p>
+   27        <p>
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/index.html.erb:
+   98                 <p><%= $intro.name %></p>
+   99                  地址：<%= $intro.addr %><br />
+  100:                 电话：0510-81151545<br />
+  101:                 手机：<%= $intro.tel %><br />
+  102                  联系人：<%= $intro.user %><br />
+  103                  网址：www.wxhjj.com<br/>
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/intro.html.erb:
+   25        </p>
+   26        <p>
+   27:         <span class="trn">联系电话:</span><span class="trv"> <%= $intro.tel %></span>
+   28        </p>
+   29        <p>
+
+/Users/huangchaoxing/workspace/xiab/app/views/layouts/fro.html.erb:
+    6  <title><%= $intro.name %>_无锡管道疏通清洗_无锡清理污水池_CCTV管道检测</title>
+    7  <meta name="keywords" content="无锡清理化粪池,无锡化粪池清理,无锡清理污水池,无锡清理隔油池,无锡清理沉淀池,无锡管道疏通,无锡疏通下水道,无锡污水管道清洗,无锡雨水管道清洗,无锡环卫所抽粪,无锡洒水车出租,无锡雨水管道疏通,无锡污水管道疏通,无锡CCTV管道检测,无锡管道检测,无锡声纳管道检测,无锡QV管道检测" />
+    8: <meta name="description" content="无锡清理化粪池,新区污水管道疏通检测选【服务热线：<%= $intro.tel %>】,我公司专业从事滨湖区疏通下水道,梅村清理污水池,惠山区雨水管道清洗疏通,崇安区清理隔油池,江阴清理沉淀池,宜兴环卫所抽粪.以及无锡高压管道清洗疏通,cctv声纳管道检测等业务。" />
+    9  <%= stylesheet_link_tag 'fro', media: 'all'%>
+   10  <%= javascript_include_tag 'fro'%>
+   ..
+   52          <div style="float: left; padding-left: 23px; color: #FF0000; ">
+   53            <span style="font-size: 150%; padding: 0;color: #000000">24小时服务热线:<span><br/>
+   54:           <%= $intro.tel %>
+   55          </div>
+   56        </div>
+   ..
+  105      <div class="footer-content">
+  106       Copyright <%= $intro.name %> 版权所有 电话：0510-81151545 <br />
+  107:     联系人：<%= $intro.user  %> 手机：<%= $intro.tel %>  地址：<%= $intro.addr %> <br />
+  108      主营服务: <%= $services.map{|x| x.name}.join(" ") %>
+  109      <br/>
+
+/Users/huangchaoxing/workspace/xiab/log/development.log:
+    <binary>
+
+10 matches across 6 files
+
+
+Searching 7338 files for "$intro.tel"
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/_left.html.erb:
+    8            <p style="font-size: 17px; margin: 5px 0;"><%= $intro.name %></p>
+    9                地址：<%= $intro.addr %><br />
+   10:               电话：<%= $intro.tel %><br />
+   11                手机：0510-81151545<br />
+   12                联系人：<%= $intro.user %><br />
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/about.html.erb:
+   26        </p>
+   27              <p>
+   28:         <span class="trn">手机:</span><span class="trv"> <%= $intro.tel %></span>
+   29        </p>
+   30        <p>
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/index.html.erb:
+   99                  地址：<%= $intro.addr %><br />
+  100                  电话：0510-81151545<br />
+  101:                 手机：<%= $intro.tel %><br />
+  102                  联系人：<%= $intro.user %><br />
+  103                  网址：www.wxhjj.com<br/>
+
+/Users/huangchaoxing/workspace/xiab/app/views/index/intro.html.erb:
+   25        </p>
+   26        <p>
+   27:         <span class="trn">联系电话:</span><span class="trv"> <%= $intro.tel %></span>
+   28        </p>
+   29        <p>
+
+/Users/huangchaoxing/workspace/xiab/app/views/layouts/fro.html.erb:
+   52          <div style="float: left; padding-left: 23px; color: #FF0000; ">
+   53            <span style="font-size: 150%; padding: 0;color: #000000">24小时服务热线:<span><br/>
+   54:           <%= $intro.tel %>
+   55          </div>
+   56        </div>
+   ..
+  105      <div class="footer-content">
+  106       Copyright <%= $intro.name %> 版权所有 电话：0510-81151545 <br />
+  107:     联系人：<%= $intro.user  %> 手机：<%= $intro.tel %>  地址：<%= $intro.addr %> <br />
+  108      主营服务: <%= $services.map{|x| x.name}.join(" ") %>
+  109      <br/>
+
+/Users/huangchaoxing/workspace/xiab/log/development.log:
+    <binary>
+
+7 matches across 6 files
